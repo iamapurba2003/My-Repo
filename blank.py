@@ -11,6 +11,22 @@
 # print("The temperature measure in Fahrenheit is", F_measure)
 
 
+# """ Q.3.Find out roots of a quadratic equation whose polynomials will be given by user """
+
+
+# from math import *
+
+
+# a = int(input("Enter the Value of A: "))
+# b = int(input("Enter the Value of B: "))
+# c = int(input("Enter the Value of C: "))
+
+# d = pow(b,2) - (4*a*c)
+# sum1 = (-b + sqrt(d))/(2*a)
+# sum2 = (-b - sqrt(d))/(2*a)
+# print(f"The Roots of the Equation are {sum1} & {sum2}")
+
+
 
 # Q.4. Write a program in python to generate a report card of a students according to CBSE grade system. User will input 6 subject marks (English, Bengali/Hindi, Physics, Chemistry, Biology and Computer).Find out the total mark and grade. The grade will be calculated as follows:
 # 91-100 – “A+”
@@ -54,6 +70,67 @@ if grade <=40:
     print("You failed this examination")
     print("Better luck next time")
 """
+# def Grader(score):
+#     if score >= 91:
+#         return "A+"
+#     if score >= 81 and score <= 90:
+#         return "A"
+#     if score >= 71 and score <= 80:
+#         return "B+"
+#     if score >= 61 and score <= 70:
+#         return "B"
+#     if score >= 51 and score <= 60:
+#         return "C"
+#     if score >= 41 and score <= 50:
+#         return "D"
+#     if score >= 31 and score <= 40:
+#         return "E"
+#     if score <= 30:
+#         return "Fail"
+
+
+""" Alternative """
+
+
+# marks_container = input("Enter the Marks of 6 Subjects: ")
+# list_container = marks_container.split(", ")
+# sum = 0
+
+# for val in list_container:
+#     num = int(val)
+#     sum = sum + num
+
+# percent = (sum/600)*100
+# x = Grader(percent)
+# print("==========================================================")
+# print("=           Satish Chandra Memorial School               =")
+# print("=                    REPORT CARD                         =")
+# print("==========================================================")
+# print("= NAME : Apurba Ghosh                     CLASS : XI     = ")
+# print("= ROLL NO. : 5                            SEC :    C     =")
+# print("=           --------------------------------             =")
+# print("=                                                        =")
+# print("=                 SUBJECTWISE MARKS                      =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print(f"=  English:     {list_container[0]}                                       =")
+# print(f"=  Bengali:     {list_container[1]}                                       =")
+# print(f"=  Physics:     {list_container[2]}                                       =")
+# print(f"=  Chemistry:   {list_container[3]}                                       =")
+# print(f"=  Biology:     {list_container[4]}                                       =")
+# print(f"=  Computer:    {list_container[5]}                                       =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print(f"= The Total Marks is {sum}                                 =")
+# print(f"= The Grade Obtained is {x}                               =")
+# print("=                                                        =")
+# print("==========================================================")
+
 
 
 
