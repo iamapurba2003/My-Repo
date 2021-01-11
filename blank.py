@@ -75,12 +75,12 @@ for i in range(0,200):
 
 #Q.6. Write a program in python to print all the multiples of 5 from 1 to 100 
 
-
+"""
 for i in range(1,101):
   if i%5 == 0:
       print(i, end = " ")
                            
-
+"""
 
 #Q.7. Write a program in python to print the following series : 
 # 1! + 2! + 3! + …………………..+N!
