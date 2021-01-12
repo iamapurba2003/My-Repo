@@ -300,25 +300,25 @@ Q.14. Write a program in python to print Fibonacci series upto N terms given by 
 Q.15. Write a program in python to find out GCD of two numbers given by user.
 '''
 
-user_num = input("Enter number: ")
-list_num = user_num.split(", ")
+# user_num = input("Enter number: ")
+# list_num = user_num.split(", ")
 
-num1 = int(list_num[0])
-num2 = int(list_num[1])
-num3 = 0
+# num1 = int(list_num[0])
+# num2 = int(list_num[1])
+# num3 = 0
 
-if num1>num2:
-    while num2 != 0:
-        num3 = num1%num2
-        num1 = num2
-        num2 = num3
-    print(f"The GCD of {list_num[0]} and {list_num[1]} is: {num1}")
-if num2>num1:
-    while num1 != 0:
-        num3 = num2%num1
-        num2 = num1
-        num1 = num3
-    print(f"The GCD of {list_num[0]} and {list_num[1]} is: {num2}")
+# if num1>num2:
+#     while num2 != 0:
+#         num3 = num1%num2
+#         num1 = num2
+#         num2 = num3
+#     print(f"The GCD of {list_num[0]} and {list_num[1]} is: {num1}")
+# if num2>num1:
+#     while num1 != 0:
+#         num3 = num2%num1
+#         num2 = num1
+#         num1 = num3
+#     print(f"The GCD of {list_num[0]} and {list_num[1]} is: {num2}")
 
 
 
