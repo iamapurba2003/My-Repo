@@ -296,4 +296,57 @@ Q.14. Write a program in python to print Fibonacci series upto N terms given by 
 # print(*list1, sep = ", ")
 # #print(", ".join(list1))
 
+'''
+Q.15. Write a program in python to find out GCD of two numbers given by user.
+'''
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+num3 = 0
+if num1>num2:
+    while num2 != 0:
+        num3 = num1%num2
+        num1 = num2
+        num2 = num3
+    print(num1)
+if num2>num1:
+    while num1 != 0:
+        num3 = num2%num1
+        num2 = num1
+        num1 = num3
+    print(num2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
