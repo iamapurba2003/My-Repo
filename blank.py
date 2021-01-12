@@ -315,7 +315,7 @@ if num2>num1:
         num2 = num1
         num1 = num3
     print(num2)
-print("Apurba is a chutiya!!")
+
 
 
 
