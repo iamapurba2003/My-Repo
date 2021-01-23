@@ -62,13 +62,18 @@ def comparison(x: list):
 # comparison(user_list)
 
 
-def Fah_to_Cel(x: float):
+def Fah_to_Cel(x: float) -> bool:
     """
     Converts `Fahrenheit` measure into `Celsius` measure. 
     """
     C_measure = (x-32)*5/9
     
-    print(C_measure)
+    print(f"{C_measure:.3f}")
+    return True
+
+
+# p1 = 273
+# print(Fah_to_Cel(p1))
 
 
 def palindrome_str(x: str) -> bool:
@@ -101,7 +106,7 @@ def palindrome_num(y: int) -> bool:
         return False
     
 
-ab = int(input("Enter character: "))
-palindrome_num(ab)
+# ab = int(input("Enter character: "))
+# palindrome_num(ab)
 
 
