@@ -89,20 +89,20 @@ def palindrome_str(x: str) -> bool:
         print(f"{x} is not a Palindrome string.")
         return False
     
-def palindrome_num(y: int) -> bool:
+def palindrome_num(x: int) -> bool:
     '''
     Checks whether a `integer number` is a `Palindrome` or not.
     '''
-    temp = y
+    temp = x
     sum = ''
     while temp !=0:
         sum = sum + str(temp%10)
         temp = temp//10    
-    if int(sum) == y:
-        print(f'{y} is a Palindrome number.')
+    if int(sum) == x:
+        print(f'{x} is a Palindrome number.')
         return True
     else:
-        print(f'{y} is not a Palindrome number.')
+        print(f'{x} is not a Palindrome number.')
         return False
     
 
