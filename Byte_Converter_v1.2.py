@@ -385,6 +385,21 @@ def zb_to_gb(x: float)-> None:
     return None
 
 
+def zb_to_tb(x: float)-> None:
+    TB = x*pow(1024,3)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{TB:.2f}{RESET} TB")
+    return None
+
+
+def zb_to_pb(x:float)-> None:
+    PB = x*pow(1024,2)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{PB:.2f}{RESET} PB")
+    return None
+
+
+
+    
+
 
 
 
