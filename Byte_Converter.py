@@ -367,7 +367,8 @@ def eb_to_geb(x: float)-> None:
     return None
 
 
-def zb_to_kb(x: float)-> None:
+#ZB[ZettaByte] -> All Conversion
+def zb_to_kb(x: float)-> None:  #ZB -> KB
     KB = x*pow(1024,6)
     print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{KB:.2f}{RESET} KB")
     return None
@@ -397,8 +398,174 @@ def zb_to_pb(x:float)-> None:
     return None
 
 
+def zb_to_eb(x:float)-> None:
+    EB = x*pow(1024, 1)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{EB:.2f}{RESET} EB")
+    return None
 
+
+def zb_to_yb(x:float)-> None:
+    YB = x/pow(1024, 1)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{YB:.2f}{RESET} YB")
+    return None
+
+
+def zb_to_bb(x: float)-> None:
+    BB = x/pow(1024,2)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{BB:.2f}{RESET} BB")
+    return None
+
+
+def zb_to_geb(x: float)-> None:
+    GEB = x/pow(1024,3)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{GEB:.2f}{RESET} GEB")
+    return None
+
+
+#YB[YottaByte] -> All Conversion
+
+def yb_to_kb(x: float)-> None:
+    KB = x*pow(1024,7)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{KB:.2f}{RESET} KB")
+    return None
+
+
+def yb_to_mb(x: float)-> None:
+    MB = x*pow(1024,6)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{MB:.2f}{RESET} MB")
+    return None
+
+
+def yb_to_gb(x: float)-> None:
+    GB = x*pow(1024,5)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{GB:.2f}{RESET} GB")
+    return None
     
+
+def yb_to_tb(x: float)-> None:
+    TB = x*pow(1024,4)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{TB:.2f}{RESET} TB")
+    return None
+
+
+def yb_to_pb(x: float)-> None:
+    PB = x*pow(1024,3)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{PB:.2f}{RESET} PB")
+    return None
+
+
+def yb_to_eb(x: float)-> None:
+    EB = x*pow(1024,2)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{EB:.2f}{RESET} EB")
+    return None
+
+
+def yb_to_zb(x: float)-> None:
+    ZB = x*pow(1024,1)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{ZB:.2f}{RESET} ZB")
+    return None
+
+
+def yb_to_bb(x: float)-> None:
+    BB = x/pow(1024,1)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{BB:.2f}{RESET} BB")
+    return None
+
+
+def yb_to_geb(x: float)-> None:
+    GEB = x/pow(1024,2)
+    print(f"{RED}{BOLD}{x}{RESET} ZB = {GREEN}{BOLD}{GEB:.2f}{RESET} GEB")
+    return None
+
+
+#BB[BrontoByte] -> All Conversion
+def bb_to_kb(x:float)-> None:
+    KB = x*pow(1024,8)
+    print(f"{RED}{BOLD}{x}{RESET} BB = {GREEN}{BOLD}{KB:.2f}{RESET} KB")
+    return None
+
+
+def bb_to_mb(x:float)-> None:
+    MB = x*pow(1024,7)
+    print(f"{RED}{BOLD}{x}{RESET} BB = {GREEN}{BOLD}{MB:.2f}{RESET} MB")
+    return None
+
+
+def bb_to_gb(x:float)-> None:
+    GB = x*pow(1024,6)
+    print(f"{RED}{BOLD}{x}{RESET} BB = {GREEN}{BOLD}{GB:.2f}{RESET} GB")
+    return None
+
+
+def bb_to_tb(x:float)-> None:
+    TB = x*pow(1024,5)
+    print(f"{RED}{BOLD}{x}{RESET} BB = {GREEN}{BOLD}{TB:.2f}{RESET} TB")
+    return None
+
+
+def bb_to_pb(x:float)-> None:
+    PB = x*pow(1024,4)
+    print(f"{RED}{BOLD}{x}{RESET} BB = {GREEN}{BOLD}{PB:.2f}{RESET} PB")
+    return None
+
+
+def bb_to_eb(x:float)-> None:
+    EB = x*pow(1024,3)
+    print(f"{RED}{BOLD}{x}{RESET} BB = {GREEN}{BOLD}{EB:.2f}{RESET} EB")
+    return None
+
+
+def bb_to_zb(x:float)-> None:
+    ZB = x*pow(1024,2)
+    print(f"{RED}{BOLD}{x}{RESET} BB = {GREEN}{BOLD}{ZB:.2f}{RESET} ZB")
+    return None
+
+
+def bb_to_yb(x:float)-> None:
+    YB = x*pow(1024,1)
+    print(f"{RED}{BOLD}{x}{RESET} BB = {GREEN}{BOLD}{YB:.2f}{RESET} YB")
+    return None
+
+
+def bb_to_geb(x:float)-> None:
+    GEB = x/pow(1024,1)
+    print(f"{RED}{BOLD}{x}{RESET} BB = {GREEN}{BOLD}{GEB:.2f}{RESET} GEB")
+    return None
+
+
+#GEB[GeopByte] -> All Conversion
+def geb_to_kb(x:float)-> None:
+    KB = x*pow(1024,9)
+    print(f"{RED}{BOLD}{x}{RESET} GEB = {GREEN}{BOLD}{KB:.2f}{RESET} KB")
+    return None
+
+
+def geb_to_mb(x:float)-> None:
+    MB = x*pow(1024,8)
+    print(f"{RED}{BOLD}{x}{RESET} GEB = {GREEN}{BOLD}{MB:.2f}{RESET} MB")
+    return None
+
+def geb_to_gb(x:float)-> None:
+    GB = x*pow(1024,7)
+    print(f"{RED}{BOLD}{x}{RESET} GEB = {GREEN}{BOLD}{GB:.2f}{RESET} GB")
+    return None
+
+
+def geb_to_tb(x:float)-> None:
+    TB = x*pow(1024,6)
+    print(f"{RED}{BOLD}{x}{RESET} GEB = {GREEN}{BOLD}{TB:.2f}{RESET} TB")
+    return None
+
+
+def geb_to_pb(x: float)-> None:
+    PB = x*pow(1024,5)
+    print(f"{RED}{BOLD}{x}{RESET} GEB = {GREEN}{BOLD}{PB:.2f}{RESET} PB")
+    return None
+
+
+
+
+
 
 
 
