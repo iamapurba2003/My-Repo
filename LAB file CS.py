@@ -1,17 +1,17 @@
-'''Q1. Write a program in python to convert temperature from Fahrenheit to Celsius.'''
+#Q1. Write a program in python to convert temperature from Fahrenheit to Celsius.
 # user_input = float(input("Enter temperature measure in Fahrenheit scale: "))
 # C_measure = (user_input-32)*5/9
 # print("The temperature measure in Celsius is", C_measure)
 
 
 
-'''Q.2. Write a program in python to convert temperature from Celsius to Fahrenheit'''
+#Q.2. Write a program in python to convert temperature from Celsius to Fahrenheit
 # user_temp_input = float(input("Enter temp measure in Celsius scale: "))
 # F_measure = ((n*9/5)+32)
 # print("The temperature measure in Fahrenheit is", F_measure)
 
 
-""" Q.3.Find out roots of a quadratic equation whose polynomials will be given by user """
+# """ Q.3.Find out roots of a quadratic equation whose polynomials will be given by user """
 
 
 # from math import *
@@ -28,47 +28,109 @@
 
 
 
-''' Q.4. Write a program in python to generate a report card of a students according to CBSE grade system. User will input 6 subject marks (English, Bengali/Hindi, Physics, Chemistry, Biology and Computer).Find out the total mark and grade. The grade will be calculated as follows:
-91-100 – “A+”
-81-90 – “A”
-71-80 – “B+”
-61-70 – “B”
-51-60 – “C”
-41-50 – “D”
-31-40 – “E”
-Below 40 – “Fail”
-'''
+# Q.4. Write a program in python to generate a report card of a students according to CBSE grade system. User will input 6 subject marks (English, Bengali/Hindi, Physics, Chemistry, Biology and Computer).Find out the total mark and grade. The grade will be calculated as follows:
+# 91-100 – “A+”
+# 81-90 – “A”
+# 71-80 – “B+”
+# 61-70 – “B”
+# 51-60 – “C”
+# 41-50 – “D”
+# 31-40 – “E”
+# Below 40 – “Fail”
 
 
-# input_xm_total = float(input("Enter full marks of exam: "))
-# input_eng = float(input("Enter english marks: "))
-# input_2ndLang = float(input("Enter 2nd Lang. marks: "))
-# input_Phy = float(input("Enter Physics marks: "))
-# input_Chem = float(input("Enter Chemistry marks: "))
-# input_Bio = float(input("Enter biology marks: "))
-# input_CS = float(input("Enter computer science marks: "))
+"""
+input_xm_total = float(input("Enter full marks of exam: "))
+input_eng = float(input("Enter english marks: "))
+input_2ndLang = float(input("Enter 2nd Lang. marks: "))
+input_Phy = float(input("Enter Physics marks: "))
+input_Chem = float(input("Enter Chemistry marks: "))
+input_Bio = float(input("Enter biology marks: "))
+input_CS = float(input("Enter computer science marks: "))
 
-# total_marks = (input_eng) + (input_2ndLang) + (input_Phy) + (input_Chem) + (input_Bio) + (input_CS)
-# print("Your total marks is", total_marks)
-# grade = (total_marks/(input_xm_total*6))*100
-# print("Your percentage is",grade,"%")
-# if grade >=91  and grade <= 100: 
-#     print("Your grade is A+")
-# if grade>=81 and grade <=90:
-#     print("Your grade is A")
-# if grade >=71 and grade<= 80:
-#     print("Your grade is B+")
-# if grade >=61 and grade <=70:
-#     print("Your grade is B")
-# if grade >=51 and grade<=60:
-#     print("Your grade is C")
-# if grade >=41 and grade<=50:
-#     print("Your grade is D")
-# if grade >= 31 and grade <=40:
-#     print("Your grade is E")
-# if grade <=40:
-#     print("You failed this examination")
-#     print("Better luck next time")
+total_marks = (input_eng) + (input_2ndLang) + (input_Phy) + (input_Chem) + (input_Bio) + (input_CS)
+print("Your total marks is", total_marks)
+grade = (total_marks/(input_xm_total*6))*100
+print("Your percentage is",grade,"%")
+if grade >=91  and grade <= 100: 
+    print("Your grade is A+")
+if grade>=81 and grade <=90:
+    print("Your grade is A")
+if grade >=71 and grade<= 80:
+    print("Your grade is B+")
+if grade >=61 and grade <=70:
+    print("Your grade is B")
+if grade >=51 and grade<=60:
+    print("Your grade is C")
+if grade >=41 and grade<=50:
+    print("Your grade is D")
+if grade >= 31 and grade <=40:
+    print("Your grade is E")
+if grade <=40:
+    print("You failed this examination")
+    print("Better luck next time")
+"""
+# def Grader(score):
+#     if score >= 91:
+#         return "A+"
+#     if score >= 81 and score <= 90:
+#         return "A"
+#     if score >= 71 and score <= 80:
+#         return "B+"
+#     if score >= 61 and score <= 70:
+#         return "B"
+#     if score >= 51 and score <= 60:
+#         return "C"
+#     if score >= 41 and score <= 50:
+#         return "D"
+#     if score >= 31 and score <= 40:
+#         return "E"
+#     if score <= 30:
+#         return "Fail"
+
+
+""" Alternative """
+
+
+# marks_container = input("Enter the Marks of 6 Subjects: ")
+# list_container = marks_container.split(", ")
+# sum = 0
+
+# for val in list_container:
+#     num = int(val)
+#     sum = sum + num
+
+# percent = (sum/600)*100
+# x = Grader(percent)
+# print("==========================================================")
+# print("=           Satish Chandra Memorial School               =")
+# print("=                    REPORT CARD                         =")
+# print("==========================================================")
+# print("= NAME : Apurba Ghosh                     CLASS : XI     = ")
+# print("= ROLL NO. : 5                            SEC :    C     =")
+# print("=           --------------------------------             =")
+# print("=                                                        =")
+# print("=                 SUBJECTWISE MARKS                      =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print(f"=  English:     {list_container[0]}                                       =")
+# print(f"=  Bengali:     {list_container[1]}                                       =")
+# print(f"=  Physics:     {list_container[2]}                                       =")
+# print(f"=  Chemistry:   {list_container[3]}                                       =")
+# print(f"=  Biology:     {list_container[4]}                                       =")
+# print(f"=  Computer:    {list_container[5]}                                       =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print("=                                                        =")
+# print(f"= The Total Marks is {sum}                                 =")
+# print(f"= The Grade Obtained is {x}                               =")
+# print("=                                                        =")
+# print("==========================================================")
+
 
 
 
@@ -99,7 +161,6 @@ for i in range(1,101):
 
 #Q.7. Write a program in python to print the following series : 
 # 1! + 2! + 3! + …………………..+N!
-
 """
 sum = 0
 fact = 1 
@@ -111,27 +172,25 @@ for i in range(1, input_num+1):
 """
 
 
-
-# Q.8.Write a program in python to print the following series :
-
-# X1+ X2 + X3 + …………………..+Xn
-
-
 """
-input1 = int(input("Enter number: "))
-extend = int(input("Enter iterable value: "))
-sum = 0
-for i in range(1, extend+1):
-    sum = sum + pow(input1,i)
+Q.8.Write a program in python to print the following series :
 
-print(sum)
+X1+ X2 + X3 + …………………..+Xn
 """
 
 
-"""
-Q.9.Write a program in python to print the following series :
+# input1 = int(input("Enter number: "))
+# extend = int(input("Enter iterable value: "))
+# sum = 0
+# for i in range(1, extend+1):
+#     sum = sum + pow(input1,i)
 
-1^1+ 5^5 + 10^10 + …………………..+N^N
+# print(sum)
+
+"""
+ Q.9.Write a program in python to print the following series :
+
+ 1^1+ 5^5 + 10^10 + …………………..+N^N
 """
 # range1 = int(input("Enter range: "))
 # sum = pow(1,1)
@@ -141,8 +200,6 @@ Q.9.Write a program in python to print the following series :
 #     sum = sum + pow(func,func)
 
 # print(sum-1)
-
-
 
 """
 Q.10.Write a program in python to print the following series :
@@ -175,8 +232,6 @@ Q.11.Write a program in python to print the following series :
 # print(sum)
 
 
-
-
 """
 Q.12. Write a program in python to print factorial of a number given by user.
 """
@@ -186,8 +241,6 @@ Q.12. Write a program in python to print factorial of a number given by user.
 # for i in range(1, user_num+1):
 #     fact*=i
 # print(fact)
-
-
 
 
 """
@@ -229,6 +282,19 @@ Q.14. Write a program in python to print Fibonacci series upto N terms given by 
 # print(*list1, sep = ", ")
 
 
+"""Using .join() where all the elements in the list are <class str>"""
+# num_input = 6
+# first_term = 0
+# scnd_term = 1
+# list1 =['0', '1']
+# for i in range(0,num_input-2):
+#     thrd = scnd_term+ first_term
+#     first_term = scnd_term
+#     scnd_term = thrd
+#     list1.append(str(thrd))
+# print(f"The fibonacci Series upto {num_input}th is:", end =" ")
+# print(*list1, sep = ", ")
+# #print(", ".join(list1))
 
 '''
 Q.15. Write a program in python to find out GCD of two numbers given by user.
@@ -256,8 +322,211 @@ Q.15. Write a program in python to find out GCD of two numbers given by user.
 
 
 
+"""
+Q.16. Write a program in python to find out LCM of two numbers given by user.
+"""
 
 
+"""
+Q.17. Write a program in python to print only the even position elements of a list given by user.
+"""
+
+# user_in = input("Enter elements for list: ")
+# list_user = user_in.split(",")
+# print("The list is: ", list_user)
+# length = len(list_user)
+# print("The even position elements are: ")
+# for i in range(length-1):
+#     if i%2 == 0:
+#         print(list_user[i+1], sep = ", ")
+#     else: 
+#         pass
+
+
+"""
+Q.18. Write a program in python to print a list in reverse order using for loop
+"""
+
+# list1 = [1, 2, 3, 4, 5, 6, 7, 8]
+# print(list1)
+# list2 = []
+# for i in range(len(list1)-1, -1,-1):
+#     list2.append(list1[i])
+# print(list2)
+
+
+"""
+Q.19. Write a program in python to search any number within a list. The list and the number to be find out will be given by user.
+"""
+
+# user_input = input("Enter numbers for adding in list: ")
+# list1 = user_input.split(", ")
+# print(list1)
+# search = int(input("Enter the number you want to search in the list: "))
+# for i in range(len(list1)):
+#     if search == int(list1[i]):
+#         print(f"The number {int(search)} is at position {i+1} in the list")
+#     else:
+#         continue
+
+
+'''
+Q.20. Write a program in python to print only the odd numbers from a tuple. The tuple will be given by user.
+'''
+
+# user_tuple = eval(input("Enter a numeric tuple: "))
+
+# length = len(user_tuple)
+# print(f"The tuple entered by you is: {user_tuple}")
+# list1 = []
+# for i in range(0, length):
+#     if int(user_tuple[i])%2 != 0:
+#         list1.append(str(user_tuple[i]))
+# print("The odd numbers from the tuple are:") 
+# print(*list1,sep=", ")
+
+
+
+"""
+Q.21. Write a program in python to print a string in reverse order using loop. The string will be given by user.
+"""
+
+
+# user_input = input("Enter string: ")
+# length = len(user_input)
+# i = length-1
+# while i!= -1:
+#     print(user_input[i], end = "")
+#     i -=1
+
+
+'''
+Q.22. Write a program in python to print even position element and odd position element of a user given string individually.
+'''
+
+# user_str = input("Enter your string: ")
+# length = len(user_str)
+# list_odd = []
+# list_even = []
+# for i in range(0, length):
+#     if i%2 !=0:
+#         list_odd.append(user_str[i])
+#     if i%2 ==0:
+#         list_even.append(user_str[i])
+# print('The even position string elements are:')
+# print(*list_odd, sep=", ")
+# print("The odd position string elements are:")
+# print(*list_even, sep = ", ")
+
+'''
+Q.23.Write a program to print all the keys of a dictionary and all the values of a dictionary individually.
+'''
+
+# dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+# print(f"The Dictionary is: {dictionary}")
+# keys = dictionary.keys()
+# val = dictionary.values()
+# print("The keys of the dictionary are: ")
+# print(*keys, sep=", ")
+# print("The values of the dictionary are: ")
+# print(*val, sep=", ")
+
+'''
+Q.24. Write a program in python to find out the largest and smallest number in an integer list given by user.
+'''
+'''Original Solution'''
+
+# user_list = eval(input("Enter a list: "))
+# print(user_list)
+# largest = smallest = x[0]
+# for item in user_list:
+#     if item>largest:
+#         largest = item
+
+#     if item<smallest:
+#         smallest = item
+
+#     print(f"The largest number is: {largest}")
+#     print(f'The smallest number is: {smallest}')
+
+'''Prepared from the one not to be copied on your file.'''
+# def comparison(x: list):
+#     '''
+#     Gives `Largest` and `Smallest` number from the list specified by user.
+#     '''
+#     largest = smallest = x[0]
+#     for item in x:
+#         if item>largest:
+#             largest = item
+
+#         if item<smallest:
+#             smallest = item
+
+#     print(f"The largest number is: {largest}")
+#     print(f'The smallest number is: {smallest}')
+
+# user_list = [105.25, 102.25678, 2, 21, 4000.001, 4001.010001, 505, 101, 5001, 5002.00000012356789, 4024, 3624, 5006.000256]
+# print(user_list)
+# comparison(user_list)
+
+'''The following code belongs to Apurba's logic!'''
+# from typing import List
+
+
+# user_list = [105.25, 102.25678, 2, 2, 2, 21, 4000.001, 4001.010001, 0, 000, 505, 101, 5001, 5002.00000012356789, 4024, 3624, 5006.000256]
+# def comparison(ls: list)-> List:
+#     largest = smallest = ls[0]
+#     for item in ls:
+#         if item>largest:
+#             largest = item
+
+#         if item<smallest:
+#             smallest = item
+#     return largest, smallest    
+# def main() -> None: 
+#     user_list = comparison(eval(input("Enter the list: ")))
+#     print(user_list[0])
+#     print(user_list[1])
+
+
+# if __name__ == "__main__":
+#     main()
+
+
+
+'''
+Q.25. Write a program in python to find out how many vowels are there in a user given string.
+'''
+
+
+def vowel(x: str):
+    '''
+    Gives number of `Vowels` present in a `user given` string.
+    '''
+    length = len(x)
+
+    
+    list1 = []
+    for i in range(length):
+        if x[i].casefold() in 'aeiou':
+            list1.append(x[i])
+    print(f"The number vowels are present in your input is/are: {len(list1)} and the vowel(s) is/are: ", *list1)
+
+input1 = input("Enter your string: ")
+vowel(input1)
+
+
+
+# input1 = "India"
+# length = len(input1)
+# count = 0
+# vowel = []
+# for i in range(length):
+#     if input1[i].casefold() in 'aeiou':
+#         vowel.append(input1[i])
+#         count += 1
+        
+# print(f"The number vowels are : {count}, and they are: ", ", ".join(vowel))
 
 
 
