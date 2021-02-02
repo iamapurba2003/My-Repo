@@ -1,3 +1,4 @@
+#---------------------!Algorithm!--------------------
 #Input player names
 #Ask for 'X' or 'O'
 #position 
@@ -10,7 +11,7 @@
 
 
 #------------------! Main Code !----------------------
-
+#----------! Global Variables !------------
 player_1 = input("Enter Player 1 Name: ")
 choice_player1 = input("Enter Player 1's Choice (X / O): ")
 choice_2 = "X"
@@ -51,88 +52,118 @@ def board():
         i+=1
 
 
+#Checking for a winner
 def winner():
     #horizontal check for "X"
     if pos[0] == pos[1] == pos[2] == "X":
         return True
-    if pos[3] == pos[4] == pos[5] == "X":
+    elif pos[3] == pos[4] == pos[5] == "X":
         return True
-    if pos[6] == pos[7] == pos[8] == "X":
-        return 
+    elif pos[6] == pos[7] == pos[8] == "X":
+        return True
     
     #horizontal check for "O"
-    if pos[0] == pos[1] == pos[2] == "O":
+    elif pos[0] == pos[1] == pos[2] == "O":
         return True
-    if pos[3] == pos[4] == pos[5] == "O":
+    elif pos[3] == pos[4] == pos[5] == "O":
         return True
-    if pos[6] == pos[7] == pos[8] == "O":
-        return 
+    elif pos[6] == pos[7] == pos[8] == "O":
+        return True
     
     #vertical check for "X"
-    if pos[0] == pos[3] == pos[6] == "X":
+    elif pos[0] == pos[3] == pos[6] == "X":
         return True
-    if pos[1] == pos[4] == pos[7] == "X":
+    elif pos[1] == pos[4] == pos[7] == "X":
         return True
-    if pos[2] == pos[5] == pos[8] == "X":
+    elif pos[2] == pos[5] == pos[8] == "X":
         return True
     
     #vertical check for "O"
-    if pos[0] == pos[3] == pos[6] == "O":
+    elif pos[0] == pos[3] == pos[6] == "O":
         return True
-    if pos[1] == pos[4] == pos[7] == "O":
+    elif pos[1] == pos[4] == pos[7] == "O":
         return True
-    if pos[2] == pos[5] == pos[8] == "O":
+    elif pos[2] == pos[5] == pos[8] == "O":
         return True
     
     #Diagonal check for "X"
-    if pos[0] == pos[4] == pos[8] == "X":
+    elif pos[0] == pos[4] == pos[8] == "X":
         return True
-    if pos[2] == pos[4] == pos[6] == "X":
+    elif pos[2] == pos[4] == pos[6] == "X":
         return True
 
     #Diagonal check for "O"
-    if pos[0] == pos[4] == pos[8] == "O":
+    elif pos[0] == pos[4] == pos[8] == "O":
         return True
-    if pos[2] == pos[4] == pos[6] == "O":
+    elif pos[2] == pos[4] == pos[6] == "O":
         return True
+    else:
+        return None
 
 
+#Checking to avoid overwrite
 def overwrite(x: int):
     if (pos[x] == "X" or pos[x] == "O"):
         print("The position is already filled, choose other!")
         return True
+    else:
+        return False
 
-def game():
+
+#Swapping the players after taking input from one end...
+def swap_players():
     i = 1
+    overall = winner()
     while i<10:
         if i%2 != 0:
             board()
             print("{}'s turn".format(player_1))
             player1_pos = int(input("Enter position from 1 to 9: ")) - 1
-            overwrite(player1_pos)
+            write = overwrite(player1_pos)
+            while write == True:
+                if write == True:
+                    player1_pos = int(input()) -1
+                    write = overwrite(player1_pos)
+                else:
+                    break
             pos[player1_pos] = choice_player1
             win = winner()
-            
             if win == True:
                 board()
                 print(f"{player_1} wins the game!")
                 break
             
+            
         if i%2 == 0:
             board()
             print(f"{player_2}'s turn")
             player2_pos = int(input("Enter position from 1 to 9: ")) - 1 
+            write = overwrite(player2_pos)
+            while write == True:
+                if write == True:
+                    player2_pos = int(input()) -1
+                    write = overwrite(player2_pos)
+                else:
+                    break
             pos[player2_pos] = choice_2
-            overwrite(player2_pos)
             win2 = winner()
-            
             if win2 == True:
                 board()
                 print(f"{player_2} wins the game!")
                 break
+
+
+        if i == 9 and overall == None:
+            board()
+            print("It's a TIE!")
             
         i+=1
 
+
+#main game
+def game():
+    swap_players()
+    
 
 
 
