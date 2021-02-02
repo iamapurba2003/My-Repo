@@ -1,0 +1,127 @@
+# print('Welcome to Byte Converter!!')
+# try:
+#     while True:
+#         a = float(input('Enter number: '))
+
+#         b = input("Enter numeric value's unit(KB,MB,..): ")
+#         print(f"The value you entered is: {a} {b.upper()}")
+#         if b.upper() == 'KB':
+            
+#             print(f"The value in MB is: {a/1024}")
+#             print(f"The value in GB is: {a/1024,2}")
+#             print(f"The value in TB is: {a/1024**3}")
+#             print(f"The value in PB is: {a/1024**4}")
+#             print(f"The value in EB is: {a/1024**5}")
+#             print(f"The value in ZB is: {a/1024**6}") 
+#             print(f"The value in YB is: {a/1024**7}") 
+#             print(f"The value in BB is: {a/1024**8}") 
+#             print(f"The value in GeB is: {a/1024**9}")
+#         if b.upper() == 'MB':
+            
+#             print("The value in KB is: ",a*1024)
+#             print("The value in GB is: ",a/1024)
+#             print("The value in TB is: ",a/1024**2)
+#             print("The value in PB is: ",a/1024**3)
+#             print("The value in EB is: ",a/1024**4)
+#             print("The value in ZB is: ",a/1024**5)
+#             print("The value in YB is: ",a/1024**6)
+#             print("The value in BB is: ",a/1024**7)
+#             print("The value in GeB is: ",a/1024**8)
+#         if b.upper() == 'GB':
+            
+#             print("The value in KB is: ",a*1024**2)
+#             print("The value in MB is: ",a*1024)
+#             print("The value in TB is: ",a/1024)
+#             print("The value in PB is: ",a/1024**2)
+#             print("The value in EB is: ",a/1024**3)
+#             print('The value in ZB is: ',a/1024**4)
+#             print('The value in YB is: ',a/1024**5)
+#             print('The value in BB is: ',a/1024**6)
+#             print('The value in GeB is: ',a/1024**7)
+
+#         if b.upper() == 'TB':
+            
+#             print('The value in KB is: ',a*1024**3)
+#             print('The value in MB is: ',a*1024**2)
+#             print('The value in GB is: ',a*1024)
+#             print('The value in PB is: ',a/1024)
+#             print('The value in EB is: ',a/1024**2)
+#             print('The value in ZB is: ',a/1024**3)
+#             print('The value in YB is: ',a/1024**4)
+#             print('The value in BB is: ',a/1024**5)
+#             print('The value in GeB is: ',a/1024**6)
+
+#         if b.upper() == 'PB':
+            
+#             print('The value in KB is: ',a*1024**4)
+#             print('The value in MB is: ',a*1024**3)
+#             print('The value in GB is: ',a*1024**2)
+#             print('The value in TB is: ',a*1024) 
+#             print('The value in EB is: ',a/1024)
+#             print('The value in ZB is: ',a/1024**2)
+#             print('The value in YB is: ',a/1024**3)
+#             print('The value in BB is: ',a/1024**4)
+#             print('The value in GeB is: ',a/1024**5)
+#         if b.upper() == 'EB':
+            
+#             print('The value in KB is: ',a*1024**5)
+#             print('The value in MB is: ',a*1024**4)
+#             print('The value in GB is: ',a*1024**3)
+#             print("The value in TB is: ",a*1024**2)
+#             print("The value in PB is: ",a*1024)
+#             print("The value in ZB is: ",a/1024)
+#             print('The value in YB is: ',a/1024**2)
+#             print('The value in BB is: ',a/1024**3)
+#             print('The value in GeB is: ',a/1024**4)
+
+#         if b.upper() == "ZB":
+            
+#             print('The value in KB is: ',a*1024**6)
+#             print('The value in MB is: ',a*1024**5)
+#             print('The value in GB is: ',a*1024**4)
+#             print('The value in TB is: ',a*1024**3)
+#             print('The value in PB is: ',a*1024**2)
+#             print('The value in EB is: ',a*1024)
+#             print('The value in YB is: ',a/1024)
+#             print('The value in BB is: ',a/1024**2)
+#             print('The value in GeB is: ',a/1024**3)
+
+#         if b.upper() == 'YB':
+            
+#             print(f"The value in KB is: {a*1024**7}")
+#             print(f"The value in MB is: {a*1024**6}")
+#             print(f"The value in GB is: {a*1024**5}")
+#             print(f"The value in TB is: {a*1024**4}")
+#             print(f"The value in PB is: {a*1024**3}")
+#             print(f"The value in EB is: {a*1024**2}")
+#             print(f"The value in ZB is: {a*1024}")
+#             print(f"The value in BB is: {a/1024}")
+#             print(f"The value in GeB is: {a/1024**2}")
+
+#         if b.upper() == 'BB':
+#             print(f"The value in KB is: {a*1024**8}")
+#             print(f"The value in MB is: {a*1024**7}")
+#             print(f"The value in GB is: {a*1024**6}")
+#             print(f"The value in TB is: {a*1024**5}")
+#             print(f"The value in PB is: {a*1024**4}")
+#             print(f"The value in EB is: {a*1024**3}")
+#             print(f"The value in ZB is: {a*1024**2}")
+#             print(f"The value in YB is: {a*1024}")
+#             print(f"The value in GeB is: {a/1024}")
+
+#         if b.upper() == "GEB":
+
+#             print(f"The value in KB is: {a*1024**8}")
+#             print(f"The value in MB is: {a*1024**7}")
+#             print(f"The value in GB is: {a*1024**6}")
+#             print(f"The value in TB is: {a*1024**5}")
+#             print(f"The value in PB is: {a*1024**4}")
+#             print(f"The value in EB is: {a*1024**3}")
+#             print(f"The value in ZB is: {a*1024**2}")
+#             print(f"The value in YB is: {a*1024**2}")
+#             print(f"The value in BB is: {a*1024}")
+        
+#         print('-'*50)
+
+# except Exception:
+#     print("Have a good day ahead!!")
