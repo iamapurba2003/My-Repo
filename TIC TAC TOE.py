@@ -15,8 +15,6 @@
 import random
 
 #----------! Global Variables !------------
-
-play_choice = int(input("1.PvP\n2.PvSys\nEnter num choice: "))
 pos = ['', ' ', '', ' ', ' ', '', '', ' ',' ']
 
 GREEN = '\u001b[32m'
@@ -25,26 +23,47 @@ BLUE = '\u001b[34m'
 BOLD = '\u001b[1m'
 RED = '\u001b[31m'
 YELLOW = '\u001b[33m'
+try:
+    play_choice = int(input("1.PvP\n2.PvSys\nEnter num choice: "))
 
-if play_choice == 1:
-    player_1 = input("Enter Player 1 Name: ")
-    choice_player1 = input("Enter Player 1's Choice (X / O): ")
-    choice_2 = "X"
-    if choice_player1 == "X":
-        choice_2 = "O"
-    else:
-        choice_2 = choice_2
-    player_2 = input("Enter player 2 Name: ")
 
-if play_choice == 2:
-    player = input("Enter player's name: ")
-    sys_choice = "X"
-    choice_player = input("Enter choice (X / O): ")
-    if choice_player == 'X':
-        sys_choice = "O"
-    else:
-        sys_choice = sys_choice
-        
+
+    if play_choice == 1:
+        player_1 = input("Enter Player 1 Name: ")
+        if player_1 == "":
+            player_1 = "Player 1"
+        choice_player1 = input("Enter Player 1's Choice (X / O): ")
+        choice_2 = "X"
+        if choice_player1 == "X":
+            choice_2 = "O"
+        else:
+            choice_2 = choice_2
+        player_2 = input("Enter player 2 Name: ")
+        if player_2 == "":
+            player_2 = "Player 2"
+
+    if play_choice == 2:
+        player = input("Enter player's name: ")
+        if player == "":
+            player = "Player"
+        sys_choice = "X"
+        choice_player = input("Enter choice (X / O): ")
+        if choice_player == 'X':
+            sys_choice = "O"
+        else:
+            sys_choice = sys_choice
+except Exception:
+    print("Enter a valid input!")
+    try:
+        play_choice = int(input())
+        player = input("Enter player's name: ")
+        sys_choice = "X"
+        choice_player = input("Enter choice (X / O): ")
+        if choice_player == 'X':
+            sys_choice = "O"
+    except Exception:
+        print("Thanks for playing!")
+    
 
 #To display board...
 def board():
@@ -74,11 +93,11 @@ def board():
 #Checking for a winner
 def winner():
     #horizontal check for "X"
-    if pos[0] == pos[1] == pos[2]:# == "X":
+    if pos[0] == pos[1] == pos[2] == "X" or pos[0] == pos[1] == pos[2] == "O":
         return True
-    elif pos[3] == pos[4] == pos[5]: #== "X":
+    elif pos[3] == pos[4] == pos[5] == "X" or pos[3] == pos[4] == pos[5] == "O":
         return True
-    elif pos[6] == pos[7] == pos[8]:# == "X":
+    elif pos[6] == pos[7] == pos[8] == "X" or pos[6] == pos[7] == pos[8] == "O":
         return True
     
     # #horizontal check for "O"
@@ -90,32 +109,27 @@ def winner():
     #     return True
     
     #vertical check for "X"
-    elif pos[0] == pos[3] == pos[6]: #== "X":
+    elif pos[0] == pos[3] == pos[6] == "X" or pos[0] == pos[3] == pos[6] == "X":
         return True
-    elif pos[1] == pos[4] == pos[7]:# == "X":
+    elif pos[1] == pos[4] == pos[7] == "X" or pos[1] == pos[4] == pos[7] == "O":
         return True
-    elif pos[2] == pos[5] == pos[8]:# == "X":
+    elif pos[2] == pos[5] == pos[8] == "X" or pos[2] == pos[5] == pos[8] == "O":
         return True
     
-    # #vertical check for "O"
-    # elif pos[0] == pos[3] == pos[6] == "O":
+    #vertical check for "O"
+    elif pos[0] == pos[3] == pos[6] == "O":
+        return True
+    # elif :
     #     return True
-    # elif pos[1] == pos[4] == pos[7] == "O":
-    #     return True
-    # elif pos[2] == pos[5] == pos[8] == "O":
+    # elif :
     #     return True
     
-    #Diagonal check for "X"
-    elif pos[0] == pos[4] == pos[8]: #== "X":
+    # #Diagonal check for "X"
+    elif pos[0] == pos[4] == pos[8] == "X" or pos[0] == pos[4] == pos[8] == "O":
         return True
-    elif pos[2] == pos[4] == pos[6]:# == "X":
+    elif pos[2] == pos[4] == pos[6] == "X" or pos[2] == pos[4] == pos[6] == "O":
         return True
 
-    #Diagonal check for "O"
-    # elif pos[0] == pos[4] == pos[8]: #== "O":
-    #     return True
-    # elif pos[2] == pos[4] == pos[6] == "O":
-    #     return True
     else:
         return None
 
@@ -123,7 +137,7 @@ def winner():
 #Checking to avoid overwrite
 def overwrite(x: int):
     if (pos[x] == "X" or pos[x] == "O"):
-        print("The position is already filled, choose other!")
+        
         return True
     else:
         return False
@@ -136,12 +150,33 @@ def swap_players():
     while i<10:
         if play_choice == 1:
             if i%2 != 0:
-                board()
+                if i == 1:
+                    board()
+                    print("{}'s turn".format(player_1))
+                    player1_pos = int(input("Enter position from 1 to 9: ")) - 1
+                    write = overwrite(player1_pos)
+                    while write == True:
+                        if write == True:
+                            print("The position is already filled, choose other!")
+                            player1_pos = int(input()) -1
+                            write = overwrite(player1_pos)
+                        else:
+                            break
+                    pos[player1_pos] = choice_player1
+                    win = winner()
+                    if win == True:
+                        board()
+                        print(f"{RED}{BOLD}{player_1}{RESET} wins the game!")
+                        break
+                
+                if i!= 1:
+                    board()
                 print("{}'s turn".format(player_1))
-                player1_pos = int(input("Enter position from 1 to 9: ")) - 1
+                player1_pos = int(input("Enter position from leftover places: ")) - 1
                 write = overwrite(player1_pos)
                 while write == True:
                     if write == True:
+                        print("The position is already filled, choose other!")
                         player1_pos = int(input()) -1
                         write = overwrite(player1_pos)
                     else:
@@ -153,43 +188,83 @@ def swap_players():
                     print(f"{RED}{BOLD}{player_1}{RESET} wins the game!")
                     break
                 
-                
             if i%2 == 0:
-                board()
-                print(f"{player_2}'s turn")
-                player2_pos = int(input("Enter position from 1 to 9: ")) - 1 
-                write = overwrite(player2_pos)
-                while write == True:
-                    if write == True:
-                        player2_pos = int(input()) -1
-                        write = overwrite(player2_pos)
-                    else:
-                        break
-                pos[player2_pos] = choice_2
-                win2 = winner()
-                if win2 == True:
+                if i == 1:
                     board()
-                    print(f"{YELLOW}{BOLD}{player_2}{RESET} wins the game!")
-                    break
+                    print(f"{player_2}'s turn")
+                    player2_pos = int(input("Enter position from 1 to 9: ")) - 1 
+                    write = overwrite(player2_pos)
+                    while write == True:
+                        if write == True:
+                            print("The position is already filled, choose other!")
+                            player2_pos = int(input()) -1
+                            write = overwrite(player2_pos)
+                        else:
+                            break
+                    pos[player2_pos] = choice_2
+                    win2 = winner()
+                    if win2 == True:
+                        board()
+                        print(f"{YELLOW}{BOLD}{player_2}{RESET} wins the game!")
+                        break
+                if i != 1:
+                    board()
+                    print(f"{player_2}'s turn")
+                    player2_pos = int(input("Enter position from leftover places: ")) - 1 
+                    write = overwrite(player2_pos)
+                    while write == True:
+                        if write == True:
+                            print("The position is already filled, choose other!")
+                            player2_pos = int(input()) -1
+                            write = overwrite(player2_pos)
+                        else:
+                            break
+                    pos[player2_pos] = choice_2
+                    win2 = winner()
+                    if win2 == True:
+                        board()
+                        print(f"{YELLOW}{BOLD}{player_2}{RESET} wins the game!")
+                        break
         if play_choice == 2:
             if choice_player == "X":
                 if i%2 != 0:
-                    board()
-                    print("{}'s turn".format(player))
-                    player_pos = int(input("Enter position from 1 to 9: ")) - 1
-                    write = overwrite(player_pos)
-                    while write == True:
-                        if write == True:
-                            player_pos = int(input()) -1
-                            write = overwrite(player_pos)
-                        else:
-                            break
-                    pos[player_pos] = choice_player
-                    win = winner()
-                    if win == True:
+                    if i == 1:
                         board()
-                        print(f"{BOLD}{GREEN}{player}{RESET} wins the game!")
-                        break
+                        print("{}'s turn".format(player))
+                        player_pos = int(input("Enter position from 1 to 9: ")) - 1
+                        write = overwrite(player_pos)
+                        while write == True:
+                            if write == True:
+                                print("The position is already filled, choose other!")
+                                player_pos = int(input()) -1
+                                write = overwrite(player_pos)
+                            else:
+                                break
+                        pos[player_pos] = choice_player
+                        win = winner()
+                        if win == True:
+                            board()
+                            print(f"{BOLD}{GREEN}{player}{RESET} wins the game!")
+                            break
+            
+                    if i != 1:
+                        board()
+                        print("{}'s turn".format(player))
+                        player_pos = int(input("Enter position from leftover places: ")) - 1
+                        write = overwrite(player_pos)
+                        while write == True:
+                            if write == True:
+                                print("The position is already filled, choose other!")
+                                player_pos = int(input()) -1
+                                write = overwrite(player_pos)
+                            else:
+                                break
+                        pos[player_pos] = choice_player
+                        win = winner()
+                        if win == True:
+                            board()
+                            print(f"{BOLD}{GREEN}{player}{RESET} wins the game!")
+                            break
             
                 if i%2 == 0:
                     board()
@@ -198,6 +273,7 @@ def swap_players():
                     write = overwrite(sys_turn)
                     while write == True:
                         if write == True:
+                            print("Re-choosing the position...")
                             sys_turn = random.randint(0,8)
                             write = overwrite(sys_turn)
                         else:
@@ -208,6 +284,8 @@ def swap_players():
                     if win == True:
                         board()
                         print(f"{BOLD}{RED}Computer{RESET} wins the game!")
+                        break
+
                 
             if choice_player == "O":
                 if i%2 == 0:
@@ -217,6 +295,7 @@ def swap_players():
                     write = overwrite(player_pos)
                     while write == True:
                         if write == True:
+                            print("The position is already filled, choose other!")
                             player_pos = int(input()) -1
                             write = overwrite(player_pos)
                         else:
@@ -225,7 +304,7 @@ def swap_players():
                     win = winner()
                     if win == True:
                         board()
-                        print(f"{BOLD}{GREEN}{player}{RESET} wins the game!")
+                        print(f"{BOLD}{YELLOW}{player}{RESET} wins the game!")
                         break
             
                 if i%2 != 0:
@@ -235,6 +314,7 @@ def swap_players():
                     write = overwrite(sys_turn)
                     while write == True:
                         if write == True:
+                            print("Re-choosing the position...")
                             sys_turn = random.randint(1,10)
                             write = overwrite(sys_turn)
                         else:
@@ -245,7 +325,7 @@ def swap_players():
                     if win == True:
                         board()
                         print(f"{BOLD}{RED}Computer{RESET} wins the game!")
-
+                        break
         if i == 9 and overall == None:
             board()
             print("No one wins :( !")
