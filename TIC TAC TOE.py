@@ -153,6 +153,7 @@ def swap_players():
                 if i == 1:
                     board()
                     print("{}'s turn".format(player_1))
+                    print("Your choice is {}".format(choice_player1))
                     player1_pos = int(input("Enter position from 1 to 9: ")) - 1
                     write = overwrite(player1_pos)
                     while write == True:
@@ -171,27 +172,29 @@ def swap_players():
                 
                 if i!= 1:
                     board()
-                print("{}'s turn".format(player_1))
-                player1_pos = int(input("Enter position from leftover places: ")) - 1
-                write = overwrite(player1_pos)
-                while write == True:
-                    if write == True:
-                        print("The position is already filled, choose other!")
-                        player1_pos = int(input()) -1
-                        write = overwrite(player1_pos)
-                    else:
+                    print("{}'s turn".format(player_1))
+                    print("Your choice is {}".format(choice_player1))
+                    player1_pos = int(input("Enter position from leftover places: ")) - 1
+                    write = overwrite(player1_pos)
+                    while write == True:
+                        if write == True:
+                            print("The position is already filled, choose other!")
+                            player1_pos = int(input()) -1
+                            write = overwrite(player1_pos)
+                        else:
+                            break
+                    pos[player1_pos] = choice_player1
+                    win = winner()
+                    if win == True:
+                        board()
+                        print(f"{RED}{BOLD}{player_1}{RESET} wins the game!")
                         break
-                pos[player1_pos] = choice_player1
-                win = winner()
-                if win == True:
-                    board()
-                    print(f"{RED}{BOLD}{player_1}{RESET} wins the game!")
-                    break
                 
             if i%2 == 0:
-                if i == 1:
+                if i == 2:
                     board()
                     print(f"{player_2}'s turn")
+                    print("Your choice is {}".format(choice_2))
                     player2_pos = int(input("Enter position from 1 to 9: ")) - 1 
                     write = overwrite(player2_pos)
                     while write == True:
@@ -207,9 +210,10 @@ def swap_players():
                         board()
                         print(f"{YELLOW}{BOLD}{player_2}{RESET} wins the game!")
                         break
-                if i != 1:
+                if i != 2:
                     board()
                     print(f"{player_2}'s turn")
+                    print("Your choice is {}".format(choice_2))
                     player2_pos = int(input("Enter position from leftover places: ")) - 1 
                     write = overwrite(player2_pos)
                     while write == True:
@@ -231,6 +235,7 @@ def swap_players():
                     if i == 1:
                         board()
                         print("{}'s turn".format(player))
+                        print("Your choice is {}".format(choice_player))
                         player_pos = int(input("Enter position from 1 to 9: ")) - 1
                         write = overwrite(player_pos)
                         while write == True:
@@ -250,6 +255,7 @@ def swap_players():
                     if i != 1:
                         board()
                         print("{}'s turn".format(player))
+                        print("Your choice is {}".format(choice_player))
                         player_pos = int(input("Enter position from leftover places: ")) - 1
                         write = overwrite(player_pos)
                         while write == True:
@@ -291,6 +297,7 @@ def swap_players():
                 if i%2 == 0:
                     board()
                     print("{}'s turn".format(player))
+                    print("Your choice is {}".format(choice_player))
                     player_pos = int(input("Enter position from 1 to 9: ")) - 1
                     write = overwrite(player_pos)
                     while write == True:
