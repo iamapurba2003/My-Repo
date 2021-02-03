@@ -63,6 +63,7 @@ except Exception:
             sys_choice = "O"
     except Exception:
         print("Thanks for playing!")
+        exit()
     
 
 #To display board...
