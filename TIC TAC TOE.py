@@ -76,10 +76,10 @@ def winner():
     #horizontal check for "X"
     if pos[0] == pos[1] == pos[2]:# == "X":
         return True
-    # elif pos[3] == pos[4] == pos[5] == "X":
-    #     return True
-    # elif pos[6] == pos[7] == pos[8] == "X":
-    #     return True
+    elif pos[3] == pos[4] == pos[5]: #== "X":
+        return True
+    elif pos[6] == pos[7] == pos[8]:# == "X":
+        return True
     
     # #horizontal check for "O"
     # elif pos[0] == pos[1] == pos[2] == "O":
@@ -92,10 +92,10 @@ def winner():
     #vertical check for "X"
     elif pos[0] == pos[3] == pos[6]: #== "X":
         return True
-    # elif pos[1] == pos[4] == pos[7] == "X":
-    #     return True
-    # elif pos[2] == pos[5] == pos[8] == "X":
-    #     return True
+    elif pos[1] == pos[4] == pos[7]:# == "X":
+        return True
+    elif pos[2] == pos[5] == pos[8]:# == "X":
+        return True
     
     # #vertical check for "O"
     # elif pos[0] == pos[3] == pos[6] == "O":
@@ -108,12 +108,12 @@ def winner():
     #Diagonal check for "X"
     elif pos[0] == pos[4] == pos[8]: #== "X":
         return True
-    # elif pos[2] == pos[4] == pos[6] == "X":
-    #     return True
+    elif pos[2] == pos[4] == pos[6]:# == "X":
+        return True
 
     #Diagonal check for "O"
-    elif pos[0] == pos[4] == pos[8]: #== "O":
-        return True
+    # elif pos[0] == pos[4] == pos[8]: #== "O":
+    #     return True
     # elif pos[2] == pos[4] == pos[6] == "O":
     #     return True
     else:
@@ -194,11 +194,11 @@ def swap_players():
                 if i%2 == 0:
                     board()
                     print("System's turn")
-                    sys_turn = random.randint(1, 10)
+                    sys_turn = random.randint(0, 8)
                     write = overwrite(sys_turn)
                     while write == True:
                         if write == True:
-                            sys_turn = random.randint(1,10)
+                            sys_turn = random.randint(0,8)
                             write = overwrite(sys_turn)
                         else:
                             break
