@@ -20,7 +20,7 @@ if choice_player1 == "X":
 else:
     choice_2 = choice_2
 player_2 = input("Enter player 2 Name: ")
-pos = ['-', '-', '-', '-', '-', '-', '-', '-','-']
+pos = ['1', '2', '3', '4', '5', '6', '7', '8','9']
 
 
 
