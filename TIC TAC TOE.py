@@ -1,4 +1,5 @@
 #---------------------!Algorithm!--------------------
+#Ask for player choice {Player v Player} or {Player v System[Beta]}
 #Input player names
 #Ask for 'X' or 'O'
 #position 
@@ -8,7 +9,6 @@
 #prohibit overwrite
 #continuous check for winner
     #Display Winner with name...
-
 
 #------------------! Main Code !----------------------
 #-------! Modules !---------
