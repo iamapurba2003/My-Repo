@@ -345,8 +345,6 @@ def game():
     
     swap_players()
     
-
-
 game()
 
 
