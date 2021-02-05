@@ -16,13 +16,20 @@ import random
 
 #----------! Global Variables !------------
 pos = ['', ' ', '', ' ', ' ', '', '', ' ',' ']
-
-GREEN = '\u001b[32m'
-RESET = '\u001b[0m'
-BLUE = '\u001b[34m'
-BOLD = '\u001b[1m'
+BLACK = '\u001b[30m'
 RED = '\u001b[31m'
+GREEN = '\u001b[32m'
 YELLOW = '\u001b[33m'
+BLUE = '\u001b[34m'
+MAGENTA = '\u001b[35m'
+CYAN = '\u001b[36m'
+WHITE = '\u001b[37m'
+RESET = '\u001b[0m'
+
+BOLD = '\u001b[1m'
+UNDERLINE = '\u001b[4m'
+REVERSE = '\u001b[7m'
+
 try:
     play_choice = int(input("1.PvP\n2.PvSys\nEnter num choice: "))
 
@@ -87,7 +94,10 @@ def board():
             print(f"{BLUE}| \t {GREEN}{pos[6]}{RESET}{BLUE} \t | \t {GREEN}{pos[7]}{RESET}{BLUE} \t |\t {GREEN}{pos[8]}{RESET}{BLUE} \t|{RESET}")
         if i == 18:
             print(f'{BLUE}-{RESET}'*49)
-            
+
+        
+
+
         i+=1
 
 
@@ -138,7 +148,6 @@ def winner():
 #Checking to avoid overwrite
 def overwrite(x: int):
     if (pos[x] == "X" or pos[x] == "O"):
-        
         return True
     else:
         return False
