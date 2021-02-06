@@ -19,7 +19,7 @@
 # from Functions import palindrome
 # palindrome(101)
 
-from Functions import *
+# from Functions import *
 # user = int(input("Choose one:\n1. Word Palindrome\n2. Number Palindrome\n"))
 
 # if user == 1:
@@ -33,3 +33,8 @@ from Functions import *
 #     ac = palindrome_num(num1)
 #     if ac == True:
 #         print(num1/2)
+
+
+
+print("Hello World!")
+print("Welcome to the World of Programming...!")
