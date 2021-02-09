@@ -1,17 +1,17 @@
-#Q1. Write a program in python to convert temperature from Fahrenheit to Celsius.
+"""Q1. Write a program in python to convert temperature from Fahrenheit to Celsius."""
 # user_input = float(input("Enter temperature measure in Fahrenheit scale: "))
 # C_measure = (user_input-32)*5/9
 # print("The temperature measure in Celsius is", C_measure)
 
 
 
-#Q.2. Write a program in python to convert temperature from Celsius to Fahrenheit
+"""Q.2. Write a program in python to convert temperature from Celsius to Fahrenheit"""
 # user_temp_input = float(input("Enter temp measure in Celsius scale: "))
 # F_measure = ((n*9/5)+32)
 # print("The temperature measure in Fahrenheit is", F_measure)
 
 
-# """ Q.3.Find out roots of a quadratic equation whose polynomials will be given by user """
+""" Q.3.Find out roots of a quadratic equation whose polynomials will be given by user """
 
 
 # from math import *
@@ -27,149 +27,89 @@
 # print(f"The Roots of the Equation are {sum1} & {sum2}")
 
 
+"""
+Q.4. Write a program in python to generate a report card of a students according to CBSE grade system. User will input 6 subject marks (English, Bengali/Hindi, Physics, Chemistry, Biology and Computer).Find out the total mark and grade. The grade will be calculated as follows:
+91-100 – “A+”
+81-90 – “A”
+71-80 – “B+”
+61-70 – “B”
+51-60 – “C”
+41-50 – “D”
+31-40 – “E”
+Below 40 – “Fail”
+"""
 
-# Q.4. Write a program in python to generate a report card of a students according to CBSE grade system. User will input 6 subject marks (English, Bengali/Hindi, Physics, Chemistry, Biology and Computer).Find out the total mark and grade. The grade will be calculated as follows:
-# 91-100 – “A+”
-# 81-90 – “A”
-# 71-80 – “B+”
-# 61-70 – “B”
-# 51-60 – “C”
-# 41-50 – “D”
-# 31-40 – “E”
-# Below 40 – “Fail”
+
+# input_xm_total = float(input("Enter full marks of exam: "))
+# input_eng = float(input("Enter english marks: "))
+# input_2ndLang = float(input("Enter 2nd Lang. marks: "))
+# input_Phy = float(input("Enter Physics marks: "))
+# input_Chem = float(input("Enter Chemistry marks: "))
+# input_Bio = float(input("Enter biology marks: "))
+# input_CS = float(input("Enter computer science marks: "))
+
+# total_marks = (input_eng) + (input_2ndLang) + (input_Phy) + (input_Chem) + (input_Bio) + (input_CS)
+# print("Your total marks is", total_marks)
+# grade = (total_marks/(input_xm_total*6))*100
+# print("Your percentage is",grade,"%")
+# if grade >=91  and grade <= 100: 
+#     print("Your grade is A+")
+# if grade>=81 and grade <=90:
+#     print("Your grade is A")
+# if grade >=71 and grade<= 80:
+#     print("Your grade is B+")
+# if grade >=61 and grade <=70:
+#     print("Your grade is B")
+# if grade >=51 and grade<=60:
+#     print("Your grade is C")
+# if grade >=41 and grade<=50:
+#     print("Your grade is D")
+# if grade >= 31 and grade <=40:
+#     print("Your grade is E")
+# if grade <=40:
+#     print("You failed this examination")
+#     print("Better luck next time")
+
+
+
+
+
+
+"""Q.5.Write a program in python to print first 100 even numbers"""
+
+# count = 0
+# for i in range(0,200):
+#     if i%2 == 0:
+#       print(i, end = " ")
+#       if count == 100:
+#           break
+#     else:
+#         continue
+#     count += 1
+
+
+
+"""Q.6. Write a program in python to print all the multiples of 5 from 1 to 100 """
+
+
+# for i in range(1,101):
+#   if i%5 == 0:
+#       print(i, end = " ")
 
 
 """
-input_xm_total = float(input("Enter full marks of exam: "))
-input_eng = float(input("Enter english marks: "))
-input_2ndLang = float(input("Enter 2nd Lang. marks: "))
-input_Phy = float(input("Enter Physics marks: "))
-input_Chem = float(input("Enter Chemistry marks: "))
-input_Bio = float(input("Enter biology marks: "))
-input_CS = float(input("Enter computer science marks: "))
-
-total_marks = (input_eng) + (input_2ndLang) + (input_Phy) + (input_Chem) + (input_Bio) + (input_CS)
-print("Your total marks is", total_marks)
-grade = (total_marks/(input_xm_total*6))*100
-print("Your percentage is",grade,"%")
-if grade >=91  and grade <= 100: 
-    print("Your grade is A+")
-if grade>=81 and grade <=90:
-    print("Your grade is A")
-if grade >=71 and grade<= 80:
-    print("Your grade is B+")
-if grade >=61 and grade <=70:
-    print("Your grade is B")
-if grade >=51 and grade<=60:
-    print("Your grade is C")
-if grade >=41 and grade<=50:
-    print("Your grade is D")
-if grade >= 31 and grade <=40:
-    print("Your grade is E")
-if grade <=40:
-    print("You failed this examination")
-    print("Better luck next time")
+Q.7. Write a program in python to print the following series : 
+1! + 2! + 3! + …………………..+N!
 """
-# def Grader(score):
-#     if score >= 91:
-#         return "A+"
-#     if score >= 81 and score <= 90:
-#         return "A"
-#     if score >= 71 and score <= 80:
-#         return "B+"
-#     if score >= 61 and score <= 70:
-#         return "B"
-#     if score >= 51 and score <= 60:
-#         return "C"
-#     if score >= 41 and score <= 50:
-#         return "D"
-#     if score >= 31 and score <= 40:
-#         return "E"
-#     if score <= 30:
-#         return "Fail"
 
-
-""" Alternative """
-
-
-# marks_container = input("Enter the Marks of 6 Subjects: ")
-# list_container = marks_container.split(", ")
 # sum = 0
+# fact = 1 
+# input_num = int(input("Enter number: "))
+# for i in range(1, input_num+1):
+#   fact = fact*i
+#     sum += fact
+#     print(sum) 
 
-# for val in list_container:
-#     num = int(val)
-#     sum = sum + num
-
-# percent = (sum/600)*100
-# x = Grader(percent)
-# print("==========================================================")
-# print("=           Satish Chandra Memorial School               =")
-# print("=                    REPORT CARD                         =")
-# print("==========================================================")
-# print("= NAME : Apurba Ghosh                     CLASS : XI     = ")
-# print("= ROLL NO. : 5                            SEC :    C     =")
-# print("=           --------------------------------             =")
-# print("=                                                        =")
-# print("=                 SUBJECTWISE MARKS                      =")
-# print("=                                                        =")
-# print("=                                                        =")
-# print(f"=  English:     {list_container[0]}                                       =")
-# print(f"=  Bengali:     {list_container[1]}                                       =")
-# print(f"=  Physics:     {list_container[2]}                                       =")
-# print(f"=  Chemistry:   {list_container[3]}                                       =")
-# print(f"=  Biology:     {list_container[4]}                                       =")
-# print(f"=  Computer:    {list_container[5]}                                       =")
-# print("=                                                        =")
-# print("=                                                        =")
-# print("=                                                        =")
-# print("=                                                        =")
-# print("=                                                        =")
-# print("=                                                        =")
-# print("=                                                        =")
-# print(f"= The Total Marks is {sum}                                 =")
-# print(f"= The Grade Obtained is {x}                               =")
-# print("=                                                        =")
-# print("==========================================================")
-
-
-
-
-
-
-#Q.5.Write a program in python to print first 100 even numbers
-"""
-count = 0
-for i in range(0,200):
-  if i%2 == 0:
-      print(i, end = " ")
-          if count == 100:
-                break
-  else:
-      continue
-  count += 1
-"""
-
-
-#Q.6. Write a program in python to print all the multiples of 5 from 1 to 100 
-
-"""
-for i in range(1,101):
-  if i%5 == 0:
-      print(i, end = " ")
-                           
-"""
-
-#Q.7. Write a program in python to print the following series : 
-# 1! + 2! + 3! + …………………..+N!
-"""
-sum = 0
-fact = 1 
-input_num = int(input("Enter number: "))
-for i in range(1, input_num+1):
-  fact = fact*i
-    sum += fact
-    print(sum) 
-"""
 
 
 """
@@ -449,48 +389,6 @@ Q.24. Write a program in python to find out the largest and smallest number in a
 #     print(f"The largest number is: {largest}")
 #     print(f'The smallest number is: {smallest}')
 
-'''Prepared from the one not to be copied on your file.'''
-# def comparison(x: list):
-#     '''
-#     Gives `Largest` and `Smallest` number from the list specified by user.
-#     '''
-#     largest = smallest = x[0]
-#     for item in x:
-#         if item>largest:
-#             largest = item
-
-#         if item<smallest:
-#             smallest = item
-
-#     print(f"The largest number is: {largest}")
-#     print(f'The smallest number is: {smallest}')
-
-# user_list = [105.25, 102.25678, 2, 21, 4000.001, 4001.010001, 505, 101, 5001, 5002.00000012356789, 4024, 3624, 5006.000256]
-# print(user_list)
-# comparison(user_list)
-
-'''The following code belongs to Apurba's logic!'''
-# from typing import List
-
-
-# user_list = [105.25, 102.25678, 2, 2, 2, 21, 4000.001, 4001.010001, 0, 000, 505, 101, 5001, 5002.00000012356789, 4024, 3624, 5006.000256]
-# def comparison(ls: list)-> List:
-#     largest = smallest = ls[0]
-#     for item in ls:
-#         if item>largest:
-#             largest = item
-
-#         if item<smallest:
-#             smallest = item
-#     return largest, smallest    
-# def main() -> None: 
-#     user_list = comparison(eval(input("Enter the list: ")))
-#     print(user_list[0])
-#     print(user_list[1])
-
-
-# if __name__ == "__main__":
-#     main()
 
 
 
@@ -516,17 +414,6 @@ input1 = input("Enter your string: ")
 vowel(input1)
 
 
-
-# input1 = "India"
-# length = len(input1)
-# count = 0
-# vowel = []
-# for i in range(length):
-#     if input1[i].casefold() in 'aeiou':
-#         vowel.append(input1[i])
-#         count += 1
-        
-# print(f"The number vowels are : {count}, and they are: ", ", ".join(vowel))
 
 
 
