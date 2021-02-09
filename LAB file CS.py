@@ -397,21 +397,21 @@ Q.25. Write a program in python to find out how many vowels are there in a user 
 '''
 
 
-def vowel(x: str):
-    '''
-    Gives number of `Vowels` present in a `user given` string.
-    '''
-    length = len(x)
+# def vowel(x: str):
+#     '''
+#     Gives number of `Vowels` present in a `user given` string.
+#     '''
+#     length = len(x)
 
     
-    list1 = []
-    for i in range(length):
-        if x[i].casefold() in 'aeiou':
-            list1.append(x[i])
-    print(f"The number vowels are present in your input is/are: {len(list1)} and the vowel(s) is/are: ", *list1)
+#     list1 = []
+#     for i in range(length):
+#         if x[i].casefold() in 'aeiou':
+#             list1.append(x[i])
+#     print(f"The number vowels are present in your input is/are: {len(list1)} and the vowel(s) is/are: ", *list1)
 
-input1 = input("Enter your string: ")
-vowel(input1)
+# input1 = input("Enter your string: ")
+# vowel(input1)
 
 
 
