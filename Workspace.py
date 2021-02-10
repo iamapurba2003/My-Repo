@@ -36,5 +36,63 @@
 
 
 
-print("Hello World!")
-print("Welcome to the World of Programming...!")
+# print("Hello World!")
+# print("Welcome to the World of Programming...!")
+
+
+# import mysql.connector
+
+
+# db = mysql.connector.connect(user = "root", password = "root", host = "localhost", database = "test", auth_plugin = "mysql_native_password")
+
+# mycursor = db.cursor()
+
+# mycursor.execute("CREATE TABLE customers (name VARCHAR(155), address VARCHAR(155))")
+# # mycursor.execute("SHOW TABLES")
+
+# # db.commit()
+
+# for x in mycursor:
+# 	print(x)
+
+
+"""Print the following output:
+i)
+*
+**
+***
+****
+*****
+
+ii)
+	*
+   * *
+  * * * 
+ * * * *
+
+ iii)
+ 	*
+   **
+  ***
+ ****
+*****
+
+iv) 
+1
+12
+123
+1234
+12345
+
+v)
+1
+23
+456
+78910"""
+
+print("Solution to Q5")
+for i in range(1,6):
+	for j in range(1, i+1):
+		print(j, end = " ")
+
+	print()
