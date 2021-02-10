@@ -90,9 +90,56 @@ v)
 456
 78910"""
 
-print("Solution to Q5")
-for i in range(1,6):
-	for j in range(1, i+1):
-		print(j, end = " ")
+# print("Solution to Q5")
+# for i in range(1,6):
+# 	for j in range(1, i+1):
+# 		print(j, end = " ")
 
-	print()
+# 	print()
+
+"""
+Find out the greatest and smallest numbers among three numbers.
+"""
+
+
+
+
+def comparison_three_num(x: str = "0, 0, 0"):
+	list_num = x.split(", ")
+	print(list_num)
+	
+	smallest = greatest = float(list_num[0])
+
+	for item in list_num:
+		if float(greatest) < float(item) :
+			greatest = float(item)
+			
+		
+		if float(item) < float(smallest):
+			smallest = float(item)
+			
+	
+	print("The greatest number is:", greatest)
+	print("The smallest number is:", smallest)
+
+
+user_num = input("Enter 3 numbers: ")
+comparison_three_num(user_num)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
