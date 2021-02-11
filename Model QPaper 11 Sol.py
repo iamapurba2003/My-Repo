@@ -1,5 +1,7 @@
 """Chapter STRING"""
-"""Q1 Palindrome Test"""
+"""
+Q1 Palindrome Test
+"""
 
 # user_string = input("Enter string: ")
 
@@ -19,19 +21,66 @@
 #     print(f"{user_string} is not a Palindrome String")
 
 
-"""Q2 Display even position elements from a user input."""
+"""
+Q2 Display even position elements from a user input.
+"""
 
-user_string = "String"
+# user_string = "String"
 
-length = len(user_string)
-print("The even position elements are: ")
-list1 =[]
-for i in range(0, length):
-    if i%2 == 0:
-        list1.append(user_string[i])
-    else:
-        continue
+# length = len(user_string)
+# print("The even position elements are: ")
+# list1 =[]
+# for i in range(0, length):
+#     if i%2 == 0:
+#         list1.append(user_string[i])
+#     else:
+#         continue
 
-print(*list1, sep=", ")
+# print(*list1, sep=", ")
+
+
+"""
+Q3 Swap even position characters with its odd position character in a string
+"""
+
+# string = "String"
+
+# temp = user_string
+# length = len(user_string)-1
+# for i in range(0, length):
+#     if i%2 == 0:
+        
+#         temp = temp.replace(user_string[i], user_string[i+1])
+    
+    
+# print(temp)
+
+
+"""
+Q4. Reverse and dislplay a string using loop
+"""
+
+string = "String"
+temp = ""
+length = len(string)-1
+for i in range(length, -1, -1):
+    temp = temp + string[i]
+print(f"The original string is: \"{string}\"\nThe reversed string is \"{temp}\"")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
