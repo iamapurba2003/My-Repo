@@ -68,6 +68,20 @@ for i in range(length, -1, -1):
 print(f"The original string is: \"{string}\"\nThe reversed string is \"{temp}\"")
 
 
+"""
+Q.6. Find no. of words in a sentence given by user using loop
+"""
+
+user_string = input("Enter Sentence: ")
+list_word = user_string.split(" ")
+count =0
+
+length = len(list_word)
+
+for num in range(length):
+  count+=1
+  
+print(f"The number of words present in the sentence is {count}")
 
 
 
