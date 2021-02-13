@@ -291,16 +291,18 @@ print(*list1, sep=", ")
 """
 Q3 Swap even position characters with its odd position character in a string
 """
-
 string = "String"
-
-temp = string
-length = len(string)-1
+temp1 = list(string)
+temp = list(string)
+length = len(string)
 for i in range(0, length):
     if i%2 == 0:     
-        temp = temp.replace(string[i], string[i+1])
-    
-print(temp)
+        temp[i] = temp1[i+1]
+    if i%2 !=0:
+        temp[i] = temp1[i-1]
+
+print("After swapping the even position characters with its adjacent odd characters...")
+print(*temp,sep = "")
 
 
 """
@@ -433,16 +435,19 @@ print(list2)
 Q2.  Swap even position character with its adjacent odd position character in a list given by user
 """
 
-user_list = eval(input("Enter a list: "))
+userList = eval(input("Enter a list: "))
+listCopy = []
 
-length = len(user_list)
+length = len(userList)
 
-for i in range(0, length-1):
+for i in range(0, length):
+    listCopy.append(userList[i])
     if i%2 == 0:
-        user_list[i] = user_list[i+1]
+        userList[i] = userList[i+1]
+    if i%2 != 0:
+        userList[i]= listCopy[i-1]
 
-print(user_list)
-
+print(userList)
 
 
 -------------------------! Important Theory + Codes !----------------------------
