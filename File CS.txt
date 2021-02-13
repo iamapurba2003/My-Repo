@@ -579,6 +579,43 @@ Traceback (most recent call last):
 TypeError: list.remove() takes exactly one argument (0 given)
 >>>
 
+Q.11. Difference between append() and extend() –function for a list
+
+Ans. append() function:
+i) This function adds a single element to the end of a list.
+ii) It takes single argument and can be used to create a nested list.
+iii)For example:
+>>> list = [1,2,3]
+>>> list.append([1,4,6])
+>>> list
+[1, 2, 3, [1, 4, 6]]
+>>> 
+
+extend() function:
+i)This function adds multiple elements to the end of the list by iterating over the argument.
+ii)This function takes multiple arguments by using squared braces and this can be used to create a nested list.
+iii) for example: 
+>>> list = [1,2]
+>>> list.extend([4,5,6])
+>>> list
+[1, 2, 4, 5, 6]
+>>>
+
+Q.12.How can you insert an element into a particular position in a list? Give example
+
+Ans. By using insert() function in a list to insert an element into a particular position
+For example:
+>>> list = [1,2,4]
+>>> list.insert(2,3)
+>>> list
+[1, 2, 3, 4]
+>>>
+
+
+
+
+
+
 
 
 Q13. What is a nested list?How you can create and print it? Give example.
