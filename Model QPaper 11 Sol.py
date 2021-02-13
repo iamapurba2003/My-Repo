@@ -128,7 +128,7 @@ userNum = int(input("Enter number: "))
 fact = 1
 for i in range(1, userNum+1):
     fact*=i
-print(fact)
+print(f"The factorial of {userNum} is {fact}")
 
 
 
@@ -273,7 +273,7 @@ else:
 Q2 Display even position elements from a user input.
 """
 
-user_string = "String"
+user_string = input("Enter string: ")
 
 length = len(user_string)
 print("The even position elements are: ")
@@ -298,7 +298,8 @@ length = len(string)-1
 for i in range(0, length):
     if i%2 == 0:     
         temp = temp.replace(string[i], string[i+1])
-    
+
+print("After swapping the even position characters with its adjacent odd characters...")
 print(temp)
 
 
