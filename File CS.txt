@@ -581,15 +581,38 @@ TypeError: list.remove() takes exactly one argument (0 given)
 
 
 
+Q13. What is a nested list?How you can create and print it? Give example.
+
+Ans. A list inside a main list is called a nested list.
+We can create it by the following method:
+>>> List = [1, 2]#method 1
+>>> List.append([4,45,456])
+>>> List
+[1, 2, [4,45,456]]
+>>> List[1] = [4,5,6]
+>>> List
+[1, [4, 5, 6], [4,45,456]]
+>>> 
 
 
+Q14. Which are aggregate functions can be used on tuple? Give examples.
+Ans. The following aggregate functions can be used on tuple are:
+i) sum()
+ii) count()
+iii) min()
+iv) max()
+v) len()
+vi) index()
 
-
-
-
-
-
-
+Q15. How can you sort tuple elements in ascending and descending order? Give example.
+Ans. By using sorted() function we can sort elements in ascending and descending order in tuples.
+Example:
+>>> tp = (1,5,7,3,2,6)
+>>> sorted(tp, reverse = False) # sorting in ascending order
+(1, 2, 3, 5, 6, 7)
+>>> sorted(tp, reverse = True) # sorting in descending order
+(7, 6, 5, 3, 2, 1)
+>>> 
 
 
 
