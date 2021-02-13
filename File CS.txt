@@ -521,14 +521,58 @@ partition() function:
 i) This function separates a string, by specifying the delimiter or separator in the function.
 ii) This function returns a 3-element tuple containing only if the specified delimiter is found in the string, the string before the delimiter, the delimiter itself and the string after the delimiter.
 
+Q6. Which function leading elements trailing and ending white spaces in a string? Give example.
+
+Ans. strip() function
+
+For example:
+>>> str1 = '  string  '
+>>> str1.strip()
+>>> str1
+'string'
+>>>
 
 
+Q7. Difference between pop(), clear() and remove() function for a list. Give example.
 
+Ans.
+pop() function:
+i) This function removes and returns a list element by specifying the element's index number.
+ii) It raises IndexError if the specified index is not found in the list.
+iii) By default it removes and returns the last entered element.
+iv)example:
+>>> l = [1,2,3]
+>>> l.pop(2)
+3
+>>>l.pop()
+2
+>>>l
+[1]
+>>>
 
+clear() function:
+i) This function removes all the elements in a list making the list empty.
+ii) The changes made in the list is permanent and cannot be reverted back.
+iii) For example
+>>> L = [1,2,3]
+>>> L.clear()
+>>> L
+[]
+>>>
 
-
-
-
+remove() function:
+i) This is function removes a list by specifying the element in it.
+ii)It raises ValueError if the specified element is not found in the list
+iii) example:
+>>> l = [4,5,6]
+>>> l.remove(6)
+>>> l
+[4, 5]
+>>> l.remove()
+Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+TypeError: list.remove() takes exactly one argument (0 given)
+>>>
 
 
 
