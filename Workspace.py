@@ -104,27 +104,76 @@ Find out the greatest and smallest numbers among three numbers.
 
 
 
-def comparison_three_num(x: str = "0, 0, 0"):
-	list_num = x.split(", ")
-	print(list_num)
+# def comparison_three_num(x: str = "0, 0, 0"):
+# 	list_num = x.split(", ")
+# 	print(list_num)
 	
-	smallest = greatest = float(list_num[0])
+# 	smallest = greatest = float(list_num[0])
 
-	for item in list_num:
-		if float(greatest) < float(item) :
-			greatest = float(item)
+# 	for item in list_num:
+# 		if float(greatest) < float(item) :
+# 			greatest = float(item)
 			
 		
-		if float(item) < float(smallest):
-			smallest = float(item)
+# 		if float(item) < float(smallest):
+# 			smallest = float(item)
 			
 	
-	print("The greatest number is:", greatest)
-	print("The smallest number is:", smallest)
+# 	print("The greatest number is:", greatest)
+# 	print("The smallest number is:", smallest)
 
 
-user_num = input("Enter 3 numbers: ")
-comparison_three_num(user_num)
+# user_num = input("Enter 3 numbers: ")
+# comparison_three_num(user_num)
+
+
+
+
+"""
+Write a python program to find the keys which is having the same value within a dictionary.
+Also find minimum and maximum keys from the dictionary
+"""
+
+dictionary = {1:21, 21:21, 2:24, 33:24, 3:96}
+
+dicKeyList = list(dictionary.keys())
+
+keyList = []
+
+for keys in range(len(dicKeyList)-1):
+	if dictionary[dicKeyList[keys]] == dictionary[dicKeyList[keys]]:
+		keyList.append(dicKeyList[keys])
+		keyList.append(dicKeyList[keys+1])
+	else:
+		continue
+
+print("The keys with same values are:\n",*keyList)
+
+
+
+
+
+"""
+Write a python program to find the keys which is having the same value within a dictionary.
+Also find minimum and maximum keys from the dictionary
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
