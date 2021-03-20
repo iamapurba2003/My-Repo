@@ -6,25 +6,28 @@ import random
 from tkinter import *
 from tkinter.ttk import *
 import mysql.connector as mc
-
+#Creating conection with the databse
 db = mc.connect(host='localhost', user='root', passwd='root', database= 'testimonials')
 myCursor = db.cursor()
 
 # myCursor.execute('create table logins (username varchar(255), password varchar(255))')
 # myCursor.execute('drop table if exists logins')
-
+#initiating the  main window based on root
 root = Tk()
 
+#setting the max and min width and height of window
 # root.geometry("600x300")
 root.maxsize(800, 400)
 root.minsize(200, 200)
 
+#adding title
 root.title("SignUp Page")
 
-
+#assigning the input to be taken during tkinter runtime into the specified variables
 userInput= StringVar()
 password = StringVar()
 
+#checking all the usernames and storing them in an empty list
 sql = f"select username from logins"
 myCursor.execute(sql)
 fetch=myCursor.fetchall()
@@ -39,6 +42,7 @@ pwdstore = []
 for i in range(len(fetch1)):
     pwdstore.append(fetch1[i][0])
 
+#definig the main function with some conditions and tkinter widgets
 def mainFuntion():
     var1 = False
     var2 = False
@@ -51,6 +55,7 @@ def mainFuntion():
     user1 = userInput.get()
     pwd = password.get()
 
+    #running check process for the password authentication and so for username
     for i in range(len(pwd)):
         if pwd[i].isupper() == True:
             var1 = True
@@ -70,14 +75,13 @@ def mainFuntion():
                 
             if user1[i] in "0123456789":
                 namevar2 = True
-    
+
+    #setting conditions for proper execution
     if user1 == '' and pwd == '':
         executer = True
         newLabel1= Label(root, text='Please fill above fields', foreground=list1[random.randint(0,6)])
         newLabel1.grid(row=5,column=1)
         root.update()
-    
-    
     
     if executer == False:
         if user1 in store:
@@ -105,7 +109,6 @@ def mainFuntion():
             newLabel1.grid(row=3, column=1)
             root.update()
 
-    
         if pwd == '':
             newlabel3 = Label(root, text='Password field cannot be left empty!', foreground=list1[0])
             newlabel3.grid(row=3,column=1)
@@ -131,7 +134,6 @@ def mainFuntion():
             wrongLabel1.grid(row=1,column=2)
             root.update()
         
-        
         if user1 == '':
             newlabel4=Label(root, text='Enter username!', foreground=list1[0])
             newlabel4.grid(row=0, column=2)
@@ -143,7 +145,6 @@ def mainFuntion():
             root.update()
 
         if (user1 not in store) and (' ' not in user1) and (len(pwd)>=8) and (var1 == True and var2 == True and namevar == True and namevar2 ==True) and (pwd not in pwdstore):
-        # else:  
             listEmpty.extend([user1,pwd])
             sql = "insert into logins (username, password) values (%s, %s)"
             val1 = tuple([user1, pwd])
@@ -153,7 +154,7 @@ def mainFuntion():
             newLabel = Label(root, text="Sign up Successful!")
             newLabel.grid(row=5, column=1)
             root.update()
-            
+            #defining a new function for displaying the credentials at last
             def NameSearch():
                 UserLabel = Label(root, text=f'username: \'{listEmpty[0]}\'  password: \'{listEmpty[1]}\'')
                 UserLabel.grid(column=1)
@@ -168,7 +169,7 @@ def mainFuntion():
             
             return True
     
-
+#widgets to be displayed in the main window based upon root
 nameLabel = Label(root, text='User Name: ')
 nameLabel.grid(row=0, column=0)
 
@@ -193,7 +194,7 @@ button1.grid(row=6, column=1)
 button2 = Button(root, text="Cancel", command=root.destroy)
 button2.grid(row=7,column=1)
 
-
+#finally running all the codes using root.mainloop() method
 root.mainloop()
 
 
