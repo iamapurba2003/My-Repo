@@ -16,7 +16,8 @@ myCursor = db.cursor()
 root = Tk()
 
 root.geometry("600x300")
-root.resizable(False, False)
+root.maxsize(800, 400)
+root.minsize(200, 200)
 
 root.title("SignUp Page")
 
