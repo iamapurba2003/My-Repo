@@ -47,10 +47,10 @@ def mainFuntion():
         if pwd[i].isupper() == True:
             var1 = True
         
-        if pwd[i] not in "-_!@#$%^&*()|+=?\/><:;[]}{0123456789":
+        if pwd[i] not in "-_!@#$%^&*()|+=?\/><:;[]}{":
             var2 = False
         
-        if pwd[i] in "-_!@#$%^&*()|+=?\/><:;[]}{0123456789":
+        if pwd[i] in "-_!@#$%^&*()|+=?\/><:;[]}{":
             var2 = True
         
     
