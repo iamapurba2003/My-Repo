@@ -7,10 +7,11 @@ root = tk.Tk()
 
 root.geometry("600x400")
 # root.resizable(False, False)
+root.maxsize(600,500)
 root.title("Widgets Examples")
 
 
-image = Image.open("StarkIndustries.png")
+image = Image.open("D:/StarkIndustries.jpg")
 photo = ImageTk.PhotoImage(image)
 
 label = ttk.Label(root, image=photo, padding=5)
