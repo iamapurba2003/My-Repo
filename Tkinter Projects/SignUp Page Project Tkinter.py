@@ -60,9 +60,6 @@ def mainFuntion():
         if pwd[i].isupper() == True:
             var1 = True
         
-        if pwd[i] not in """-_!@#$%^&'"*()|+=?\/><:;[]}{""":
-            var2 = False
-        
         if pwd[i] in """-_!@#$%^&*()|+=?'"\/><:;[]}{""":
             var2 = True
 
@@ -90,16 +87,16 @@ def mainFuntion():
             root.update()
                 
         if namevar != True:
-            newlabel1 = Label(root, text="Alphabets missing in username!", foreground=list1[0])
+            newlabel1 = Label(root, text="Alphabets missed", foreground=list1[0])
             newlabel1.grid(row=0, column=2)
             root.update()
 
         if namevar2 != True:
-            newlabel5 = Label(root, text="Numbers are missing in username!", foreground= list1[0])
+            newlabel5 = Label(root, text="Numbers missed", foreground= list1[0])
             newlabel5.grid(row=0, column=2)
             root.update()
 
-        if user1 not in store:
+        if user1 not in store and namevar == namevar2 == True:
             newlabel7 = Label(root, text="Username is available, ✓", foreground= list1[4])
             newlabel7.grid(row=0, column=2)
             root.update()
@@ -120,17 +117,23 @@ def mainFuntion():
             root.update()
 
         if var1 == var2 == False:
-            newlabel3 = Label(root, text='Uppercase and special characters absent', foreground=list1[0])
+            newlabel3 = Label(root, text='Fulfill password criteria', foreground=list1[0])
             newlabel3.grid(row=3,column=1)
             root.update()
 
         if var1 == False and var2 == True:
-            wrongLabel = Label(root, text="Password fails in having an Uppercase letter",foreground=list1[0])
+            wrongLabel = Label(root, text="Uppercase letter missed",foreground=list1[0])
             wrongLabel.grid(row=1,column=2)
             root.update()
             
         if var1 == True and var2 == False:
-            wrongLabel1 = Label(root, text="Password fails in having a special Character", foreground=list1[0])
+            wrongLabel1 = Label(root, text="special Character missed", foreground=list1[0])
+            wrongLabel1.grid(row=1,column=2)
+            root.update()
+        
+            
+        if var1 == var2 == True:
+            wrongLabel1 = Label(root, text="All the criterions are OK!", foreground=list1[4])
             wrongLabel1.grid(row=1,column=2)
             root.update()
         
