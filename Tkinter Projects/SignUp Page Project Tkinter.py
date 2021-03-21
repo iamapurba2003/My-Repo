@@ -10,22 +10,24 @@ import mysql.connector as mc
 db = mc.connect(host='localhost', user='root', passwd='root', database= 'testimonials')
 myCursor = db.cursor()
 
-# myCursor.execute('create table logins (username varchar(255), password varchar(255))')
-# myCursor.execute('drop table if exists logins')
+
 #initiating the  main window based on root
 root = Tk()
 
+
 #setting the max and min width and height of window
-# root.geometry("600x300")
 root.maxsize(800, 400)
 root.minsize(200, 200)
+
 
 #adding title
 root.title("SignUp Page")
 
+
 #assigning the input to be taken during tkinter runtime into the specified variables
 userInput= StringVar()
 password = StringVar()
+
 
 #checking all the usernames and storing them in an empty list
 sql = f"select username from logins"
@@ -42,6 +44,7 @@ pwdstore = []
 for i in range(len(fetch1)):
     pwdstore.append(fetch1[i][0])
 
+    
 #definig the main function with some conditions and tkinter widgets
 def mainFuntion():
     var1 = False
@@ -55,6 +58,7 @@ def mainFuntion():
     user1 = userInput.get()
     pwd = password.get()
 
+    
     #running check process for the password authentication and so for username
     for i in range(len(pwd)):
         if pwd[i].isupper() == True:
@@ -73,6 +77,7 @@ def mainFuntion():
             if user1[i] in "0123456789":
                 namevar2 = True
 
+                
     #setting conditions for proper execution
     if user1 == '' and pwd == '':
         executer = True
@@ -172,6 +177,8 @@ def mainFuntion():
             
             return True
     
+    
+    
 #widgets to be displayed in the main window based upon root
 nameLabel = Label(root, text='User Name: ')
 nameLabel.grid(row=0, column=0)
@@ -197,45 +204,7 @@ button1.grid(row=6, column=1)
 button2 = Button(root, text="Cancel", command=root.destroy)
 button2.grid(row=7,column=1)
 
+
 #finally running all the codes using root.mainloop() method
 root.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
