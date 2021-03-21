@@ -46,7 +46,7 @@ for i in range(len(fetch1)):
 
     
 #definig the main function with some conditions and tkinter widgets
-def mainFuntion():
+def mainFunction():
     var1 = False
     var2 = False
     namevar = False
@@ -198,7 +198,7 @@ newlabel2= Label(root, text='Password must have atleast 8 characters and should 
 newlabel2.grid(row=4, column=1)
 
 
-button1 = Button(root, text="Sign Up", command=mainFuntion)
+button1 = Button(root, text="Sign Up", command=mainFunction)
 button1.grid(row=6, column=1)
 
 button2 = Button(root, text="Cancel", command=root.destroy)
