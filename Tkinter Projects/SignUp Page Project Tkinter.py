@@ -87,7 +87,7 @@ def mainFuntion():
     
     if executer == False:
         if user1 in store:
-            newLabel1= Label(root, text='Username is already taken', foreground=list1[0])
+            newLabel1= Label(root, text='Username already taken', foreground=list1[0])
             newLabel1.grid(row=0, column=2)
             root.update()
                 
@@ -112,7 +112,7 @@ def mainFuntion():
             root.update()
 
         if pwd == '':
-            newlabel3 = Label(root, text='Password field cannot be left empty!', foreground=list1[0])
+            newlabel3 = Label(root, text='Password cannot be left empty!', foreground=list1[0])
             newlabel3.grid(row=3,column=1)
             root.update()
         
@@ -132,7 +132,7 @@ def mainFuntion():
             root.update()
             
         if var1 == True and var2 == False:
-            wrongLabel1 = Label(root, text="special Character missed", foreground=list1[0])
+            wrongLabel1 = Label(root, text="Special Character missed", foreground=list1[0])
             wrongLabel1.grid(row=1,column=2)
             root.update()
         
