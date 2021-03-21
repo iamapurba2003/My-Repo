@@ -45,7 +45,7 @@ for i in range(len(fetch1)):
     pwdstore.append(fetch1[i][0])
 
     
-#definig the main function with some conditions and tkinter widgets
+#defining the main function with some conditions and tkinter widgets
 def mainFunction():
     var1 = False
     var2 = False
