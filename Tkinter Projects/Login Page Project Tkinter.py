@@ -20,13 +20,13 @@ for i in range(len(fetcher)):
 #Setting up root and configuring it for initialising the Tkinter Window.
 root = Tk()
 root.title("Login Page")
-# root.geometry("300x100")
+root.geometry("300x150")
 
 #Tkinter runtime variables
 username = StringVar()
 password = StringVar()
 
-#defining a function for username and password execution
+#defining a function for username and password validations
 def credentials():
     user = username.get()
     passwd = password.get()
@@ -79,5 +79,3 @@ quitButton.grid(row=4, column=1)
 
 #Executing the Tkinter window
 root.mainloop()
-
-

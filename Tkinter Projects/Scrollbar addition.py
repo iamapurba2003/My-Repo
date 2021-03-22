@@ -9,7 +9,7 @@ root.geometry("600x400")
 # root.resizable(False, False)
 root.title("Widgets Examples")
 
-text= tk.Text(root, height=8)
+text= tk.Text(root, height=900, width= 168)
 text.grid(row=0,column=0,sticky="ew")
 
 text.insert("1.0","Please enter a comment")
