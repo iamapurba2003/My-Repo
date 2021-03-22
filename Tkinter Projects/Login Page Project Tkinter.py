@@ -20,7 +20,7 @@ for i in range(len(fetcher)):
 #Setting up root and configuring it for initialising the Tkinter Window.
 root = Tk()
 root.title("Login Page")
-root.geometry("300x100")
+# root.geometry("300x100")
 
 #Tkinter runtime variables
 username = StringVar()
@@ -48,10 +48,10 @@ def credentials():
         newLabel3 = Label(root, foreground='white', text='Password incorrect')
         newLabel3.grid(row=1, column=2)
         root.update()
-        newLabel2 = Label(root, text="Username not found", foreground='red')
+        newLabel2 = Label(root, text="Username not found", foreground='white')
         newLabel2.grid(row=0, column=2)
         root.update()
-        newLabel = Label(root, text="Login successful!", foreground='green')
+        newLabel = Label(root, text=f"Welcome, {user}!", foreground='green')
         newLabel.grid(row=2, column=1)
 
 
