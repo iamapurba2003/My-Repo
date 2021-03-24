@@ -19,7 +19,8 @@
 # from Functions import palindrome
 # palindrome(101)
 
-# from Functions import *
+# import Functions as fx
+# fx.palindrome_num(101)
 # user = int(input("Choose one:\n1. Word Palindrome\n2. Number Palindrome\n"))
 
 # if user == 1:
@@ -36,155 +37,23 @@
 
 
 
-# print("Hello World!")
-# print("Welcome to the World of Programming...!")
-
-
 # import mysql.connector
+# db = mysql.connector.connect(host = "localhost", user = 'root', password = 'root', database= 'test', auth_plugin = 'mysql_native_password')
 
+# myCursor = db.cursor()
 
-# db = mysql.connector.connect(user = "root", password = "root", host = "localhost", database = "test", auth_plugin = "mysql_native_password")
+# myCursor.execute("SHOW DATABASES")
 
-# mycursor = db.cursor()
+# for i in myCursor:
+#     print(i)
 
-# mycursor.execute("CREATE TABLE customers (name VARCHAR(155), address VARCHAR(155))")
-# # mycursor.execute("SHOW TABLES")
+# list1 = [1,2,3,4,5,6,7]
 
-# # db.commit()
-
-# for x in mycursor:
-# 	print(x)
-
-
-"""Print the following output:
-i)
-*
-**
-***
-****
-*****
-
-ii)
-	*
-   * *
-  * * * 
- * * * *
-
- iii)
- 	*
-   **
-  ***
- ****
-*****
-
-iv) 
-1
-12
-123
-1234
-12345
-
-v)
-1
-23
-456
-78910"""
-
-# print("Solution to Q5")
-# for i in range(1,6):
-# 	for j in range(1, i+1):
-# 		print(j, end = " ")
-
-# 	print()
-
-"""
-Find out the greatest and smallest numbers among three numbers.
-"""
-
-
-
-
-# def comparison_three_num(x: str = "0, 0, 0"):
-# 	list_num = x.split(", ")
-# 	print(list_num)
-	
-# 	smallest = greatest = float(list_num[0])
-
-# 	for item in list_num:
-# 		if float(greatest) < float(item) :
-# 			greatest = float(item)
-			
-		
-# 		if float(item) < float(smallest):
-# 			smallest = float(item)
-			
-	
-# 	print("The greatest number is:", greatest)
-# 	print("The smallest number is:", smallest)
-
-
-# user_num = input("Enter 3 numbers: ")
-# comparison_three_num(user_num)
-
-
-
-
-"""
-Write a python program to find the keys which is having the same value within a dictionary.
-Also find minimum and maximum keys from the dictionary
-"""
-
-dictionary = {1:21, 21:21, 2:24, 33:24, 3:96}
-
-dicKeyList = list(dictionary.keys())
-
-keyList = []
-
-for keys in range(len(dicKeyList)-1):
-	if dictionary[dicKeyList[keys]] == dictionary[dicKeyList[keys]]:
-		keyList.append(dicKeyList[keys])
-		keyList.append(dicKeyList[keys+1])
-	else:
-		continue
-
-print("The keys with same values are:\n",*keyList)
-
-
-
-
-
-"""
-Write a python program to find the keys which is having the same value within a dictionary.
-Also find minimum and maximum keys from the dictionary
-"""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# for j in enumerate(list1):
+#     if j== j+1:
+#         print(j)
+#     else: 
+#         print(list1)
 
 
 
