@@ -9,7 +9,7 @@ root.geometry("1366x768")
 # root.resizable(False, False)
 root.title("Widgets Examples")
 
-image = Image.open("D:/Work Folder/Github Repos/Git Folder/Tkinter Projects/StarkIndustries.png")
+image = Image.open("P:/Git Folder/Tkinter Projects/StarkIndustries.png")
 photo = ImageTk.PhotoImage(image)
 
 label = ttk.Label(root, image=photo, padding=5)
