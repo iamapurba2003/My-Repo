@@ -1,18 +1,24 @@
 from tkinter import * 
 from tkinter.ttk import *
-from PIL import Image, ImageTk
 
-address = input("Enter image address: ")
-
-
+def save():
+    with open("C:/Users/Himangshu De/Documents/newFile.txt", "a") as r:
+        r.write(textContent)
+        r.close()
+        
 window = Tk()
-window.geometry("1366x768")
-window.resizable(True, True)
+frame = Frame(window)
+frame.pack(side="top")
+window.geometry("600x400")
+window.title("Notepad")
+SaveButton = Button(frame,text="Save", command=save)
+SaveButton.pack()
 
-photo = Image.open(address).resize((1280, 720))
-photoLoader = ImageTk.PhotoImage(photo)
-
-newLabel = Label(window, image=photoLoader, text="Image with text", compound="right")
-newLabel.pack()
-
+textField = Text(window, height=500, width=600)
+textField.pack(side="bottom")
+textContent = textField.get("1.0", "end")
 window.mainloop()
+
+
+
+
