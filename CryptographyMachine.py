@@ -10,7 +10,7 @@ def basicCryptograph(message: str = ..., mode: str = ['Encrypt', 'Decrypt', None
     `mode: str` : This should contain the `mode` in string(`str`) format. The displayed list is given for the preview of the available mode specification.
     """
     keys = """a@%$bc^de!f*g&(h,i"';:.-\| ~₹jkl/m5n6o1p9q7r2s8t0uvwxy3z+#*)=_`"""
-    values = keys[::-1]
+    values = keys[-1] + keys[0:-1]
     encryptionDict = dict(zip(keys, values))
     decryptionDict = dict(zip(values, keys))
 
@@ -23,4 +23,4 @@ def basicCryptograph(message: str = ..., mode: str = ['Encrypt', 'Decrypt', None
         return modMessage.capitalize()
 
 
-print(basicCryptograph("Hii, there!", "Encrypt"))
+print(basicCryptograph("`107$`|8(d|2dwx|$6,e", "Decrypt"))
