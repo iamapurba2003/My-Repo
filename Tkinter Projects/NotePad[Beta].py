@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
 
+# Main window for filename entry
 window = Tk()
 window.title("FileName")
 text = StringVar()
@@ -14,9 +15,12 @@ newLabelText.focus()
 
 okButton = Button(window, text="Ok", command=window.destroy)
 okButton.grid()
+
 window.mainloop()
+
 fileName = text.get()
 
+# A new window with text field and other attributes
 window1 = Tk()
 window1.title(fileName)
 
