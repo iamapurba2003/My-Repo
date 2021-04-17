@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter.ttk import *
-textContent = ""
+
 window = Tk()
 window.title("FileName")
 text = StringVar()
@@ -35,6 +35,5 @@ scrollBar = Scrollbar(window1, orient="vertical", command=textField.yview)
 scrollBar.grid(row=1, column=1,sticky="ns")
 textField["yscrollcommand"] = scrollBar.set
 
-window1.mainloop()
 
-print(textContent)
+window1.mainloop()
