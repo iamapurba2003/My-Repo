@@ -35,6 +35,7 @@ def save():
 
 saveButton = Button(window1, text="Save", command=save)
 saveButton.grid(row=0, column=0)
+
 scrollBar = Scrollbar(window1, orient="vertical", command=textField.yview)
 scrollBar.grid(row=1, column=1,sticky="ns")
 textField["yscrollcommand"] = scrollBar.set
