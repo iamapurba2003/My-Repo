@@ -6,7 +6,7 @@ import datetime as dt
 # Main window for filename entry
 window = Tk()
 window.title("FileName")
-window.iconbitmap("P:/Git Folder/Tkinter Projects/Tatice-Cristal-Intense-Notepad-Bloc-notes-2.ico")
+window.iconbitmap("P:/Git Folder/Tkinter Projects/NotePad+.ico")
 text = StringVar()
 
 newLabel = Label(window, text="Enter file name(with extension): ")
@@ -26,7 +26,7 @@ fileName = text.get()
 # A new window with text field and other attributes
 window1 = Tk()
 window1.title(f"{fileName} -- NotePad+")
-window1.iconbitmap("P:/Git Folder/Tkinter Projects/Tatice-Cristal-Intense-Notepad-Bloc-notes-2.ico")
+window1.iconbitmap("P:/Git Folder/Tkinter Projects/NotePad+.ico")
 
 textField = Text(window1, height=44, width=168)
 textField.grid(row=1, column=0)
