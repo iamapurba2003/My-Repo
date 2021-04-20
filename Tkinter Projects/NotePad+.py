@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
+import datetime as dt
+
 
 # Main window for filename entry
 window = Tk()
@@ -27,7 +29,10 @@ window1.title(f"{fileName} -- NotePad+")
 textField = Text(window1, height=44, width=168)
 textField.grid(row=1, column=0)
 
+
 def save():
+    dateandtime = dt.datetime.now()
+    window1.title(f"{fileName} -- NotePad+ -- Saved @ {dateandtime.strftime('%H:%M:%S')}")
     file = open(fileName, "w")
     file.write(textField.get("1.0", "end"))
     file.close()
