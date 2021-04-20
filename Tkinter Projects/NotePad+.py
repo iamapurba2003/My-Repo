@@ -6,6 +6,7 @@ import datetime as dt
 # Main window for filename entry
 window = Tk()
 window.title("FileName")
+window.iconbitmap("P:/Git Folder/Tkinter Projects/Tatice-Cristal-Intense-Notepad-Bloc-notes-2.ico")
 text = StringVar()
 
 newLabel = Label(window, text="Enter file name(with extension): ")
@@ -25,12 +26,13 @@ fileName = text.get()
 # A new window with text field and other attributes
 window1 = Tk()
 window1.title(f"{fileName} -- NotePad+")
+window1.iconbitmap("P:/Git Folder/Tkinter Projects/Tatice-Cristal-Intense-Notepad-Bloc-notes-2.ico")
 
 textField = Text(window1, height=44, width=168)
 textField.grid(row=1, column=0)
 
 
-def save():
+def save(event):
     dateandtime = dt.datetime.now()
     window1.title(f"{fileName} -- NotePad+ -- Saved @ {dateandtime.strftime('%H:%M:%S')}")
     file = open(fileName, "w")
@@ -38,7 +40,8 @@ def save():
     file.close()
 
 
-saveButton = Button(window1, text="Save", command=save)
+saveButton = Button(window1, text="Save")
+saveButton.bind("<Enter>", save)
 saveButton.grid(row=0, column=0)
 
 scrollBar = Scrollbar(window1, orient="vertical", command=textField.yview)
