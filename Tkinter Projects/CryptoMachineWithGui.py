@@ -12,17 +12,19 @@ messageMod = StringVar()
 
 
 def cryptoMachine(message: str=..., mode: str=...):
-    keys = """a@%$bc^de!f*g&(h,i"';:.-\| ~₹jkl/m5n6o1p9q7r2s8t0uvwxy3z+#*)=_`"""
-    values = keys[-1] + keys[0:-1]
-    encryptionDict = dict(zip(keys,values))
-    decryptionDict = dict(zip(values,keys))
-    
+    keys = """aN@E%S$bc^de!fA*g&O(h,KiJ"';C]:M.-D|~L_₹jk[Zl/Im5n6Wo1Rp9}{Xq7YrP2BHs8tG0u>?<vwTxVyUF3z+Q#*)=` """
+    values = """!@#$%₹^&+-/*()}{][~`"':;.,?_|=<>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ """
+    encryptionDict = dict(zip(keys, values))
+    decryptionDict = dict(zip(values, keys))
+
     if mode == "Encrypt":
-        modMessage = "".join([encryptionDict[letter] for letter in message.lower()])
+        modMessage = "".join([encryptionDict[letter] for letter in message])
         return modMessage
+    
     if mode == "Decrypt":
-        modMessage = "".join([decryptionDict[letter] for letter in message.lower()])
-        return modMessage.capitalize()
+        modMessage = "".join([decryptionDict[letter] for letter in message])
+        return modMessage
+        
     if mode == None:
         return None
 
