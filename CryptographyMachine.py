@@ -24,4 +24,4 @@ def basicCryptograph(message: str = ..., mode: str = ['Encrypt', 'Decrypt', None
 
 message1 = input("Enter a sentence: ")
 moder = input("Enter mode: ")
-print(basicCryptograph(f"{message1}", moder))
+print(basicCryptograph(f'{message1}', moder))
