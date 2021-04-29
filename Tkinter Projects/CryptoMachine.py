@@ -4,6 +4,9 @@ from tkinter.ttk import *
 window = Tk()
 window.title("Cryptograph")
 window.iconbitmap("D:/encryption.ico")
+window.geometry("250x220")
+window.minsize(250,180)
+window.maxsize(300, 280)
 mainFrame = Frame(window)
 mainFrame.grid(row=0, column=1)
 
@@ -50,8 +53,10 @@ def main():
 
         newText = Text(window, width=20, height=4)
         newText.grid(row=8,column=1)
-        window.update()
         newText.insert("1.0", f"{CryptoMessage}")
+        newText['state'] = 'disabled' #state default -> normal
+        window.update()
+        
 
     if modeMenu.get() == "Encrypt":
         newLabel = Label(window, text="The Encrypted Message: ")
@@ -60,8 +65,10 @@ def main():
 
         newText = Text(window, width = 20, height = 4)
         newText.grid(row=8,column=1)
-        window.update()
         newText.insert("1.0",f"{CryptoMessage}")
+        newText['state'] = 'disabled' # state default -> normal
+        window.update()
+        
 
 
 mainButton = Button(window, text="Ok", command=main)
