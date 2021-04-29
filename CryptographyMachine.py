@@ -9,19 +9,19 @@ def basicCryptograph(message: str = ..., mode: str = ['Encrypt', 'Decrypt', None
 
     `mode: str` : This should contain the `mode` in string(`str`) format. The displayed list is given for the preview of the available mode specification.
     """
-    keys = """aN@E%S$bc^de!fA*g&O(h,KiJ"';C]:M.-D|~L_₹jk[Zl/Im5n6Wo1Rp9}{Xq7YrP2BHs8tG0u>?<vwTxVyUF3z+Q#*)=` """
-    values = """!@#$%₹^&+-/*()}{][~`"':;.,?_|=<>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ """
+    keys = """aN@E%S$bc^de!fA*g&4O(h,KiJ"';C]:M.-D|~L_₹jk[Zl/Im5n6Wo1Rp9}{Xq7YrP2BHs8tG0u>?<vwTxVyUF3z+Q#*) =`"""
+    values = """!@#$%₹^&+-/*()}{][~`"':;.,?_|=<>0123456789abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"""
     encryptionDict = dict(zip(keys, values))
     decryptionDict = dict(zip(values, keys))
 
-    if mode == "Encrypt":
+    if mode == "Encrypt".casefold():
         modMessage = "".join([encryptionDict[letter] for letter in message])
         return modMessage
     
-    if mode == "Decrypt":
+    if mode == "Decrypt".casefold():
         modMessage = "".join([decryptionDict[letter] for letter in message])
         return modMessage
 
 message1 = input("Enter a sentence: ")
 moder = input("Enter mode: ")
-print(basicCryptograph(f'{message1}', moder))
+print(basicCryptograph(message1, moder))
