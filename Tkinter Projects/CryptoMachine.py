@@ -12,8 +12,8 @@ messageMod = StringVar()
 
 
 def cryptoMachine(message: str=..., mode: str=...):
-    keys = """aN@E%S$bc^de!fA*g&O(h,KiJ"';C]:M.-D|~L_₹jk[Zl/Im5n6Wo1Rp9}{Xq7YrP2BHs8tG0u>?<vwTxVyUF3z+Q#*)=` """
-    values = """!@#$%₹^&+-/*()}{][~`"':;.,?_|=<>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ """
+    keys = """ aN@E%S$bc^de!fA*g&4O(h,KiJ"';C]:M.-D|~L_₹jk[Zl/Im5n6Wo1Rp9}`{Xq7YrP2BHs8tG0u>?<vwTxVyUF3z+Q#*)="""
+    values = """ !@#$%₹^&+-/*()}{][~`"':;.,?_|=<>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"""
     encryptionDict = dict(zip(keys, values))
     decryptionDict = dict(zip(values, keys))
 
