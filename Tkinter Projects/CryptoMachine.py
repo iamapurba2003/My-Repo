@@ -39,12 +39,13 @@ messageBox = Entry(mainFrame, width=40,textvariable=messageMod)
 messageBox.grid()
 messageBox.focus()
 
+Label(window,text="Select Mode: ").grid(row=1,column=1)
 modeMenu1 = Combobox(window, textvariable=modeMenu)
-modeMenu1.grid(row=1, column=1)
+modeMenu1.grid(row=2, column=1)
 modeMenu1["values"] = ("Encrypt", "Decrypt")
 modeMenu1["state"] = "readonly"
 
-def main():
+def main(event):
     CryptoMessage = cryptoMachine(messageMod.get(), modeMenu.get())
     if modeMenu.get() == "Decrypt":
         newLabel = Label(window,text="The Decrypted Message: ")
@@ -68,9 +69,9 @@ def main():
         newText.insert("1.0",f"{CryptoMessage}")
         newText['state'] = 'disabled' # state default -> normal
         window.update()
-        
+
 
 
 mainButton = Button(window, text="Ok", command=main)
-mainButton.grid(row=2,column=1)
+mainButton.grid(row=3,column=1)
 window.mainloop()
