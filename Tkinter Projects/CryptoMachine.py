@@ -45,7 +45,7 @@ modeMenu1.grid(row=2, column=1)
 modeMenu1["values"] = ("Encrypt", "Decrypt")
 modeMenu1["state"] = "readonly"
 
-def main(event):
+def main():
     CryptoMessage = cryptoMachine(messageMod.get(), modeMenu.get())
     if modeMenu.get() == "Decrypt":
         newLabel = Label(window,text="The Decrypted Message: ")
