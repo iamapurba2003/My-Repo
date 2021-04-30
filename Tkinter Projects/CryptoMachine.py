@@ -71,7 +71,6 @@ def main(event):
         window.update()
 
 
-
 mainButton = Button(window, text="Ok", command=main)
 mainButton.grid(row=3,column=1)
 window.mainloop()
