@@ -112,6 +112,13 @@ try:
                     except Exception:
                         print("Your mail was not \"Sent\" due to some potential errors...")
                         break
+            
+
+            else:
+                print("Choose a valid option!")
+                print("-"*30)
+
+                continue
 
 
 
