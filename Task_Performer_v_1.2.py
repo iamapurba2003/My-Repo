@@ -74,15 +74,7 @@ try:
                 kit.shutdown(countdown)
                 print('Your system will shut down in',countdown,'seconds')
                 print()
-                print("Do you want to cancel scheduled shutdown?\n1. Yes\n2. No")
-                cancel = int(input('Enter numeric input: '))
-                if cancel == 1:
-                    kit.cancelShutdown()
-                    print("Scheduled ShutDown cancelled...")
-                    print()
-                else:
-                    print()              
-                    continue
+                
 
             if option == 7:
                 print("Enter the link: ")
@@ -113,7 +105,16 @@ try:
                         print("Your mail was not \"Sent\" due to some potential errors...")
                         break
             
-
+            if option == 9:
+                print("Do you want to cancel scheduled shutdown?\n1. Yes\n2. No")
+                cancel = int(input('Enter numeric input: '))
+                if cancel == 1:
+                    kit.cancelShutdown()
+                    print("Scheduled ShutDown cancelled...")
+                    print()
+                else:
+                    print()              
+                    continue
             else:
                 print("Choose a valid option!")
                 print("-"*30)
