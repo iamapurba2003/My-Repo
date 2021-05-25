@@ -6,6 +6,8 @@ from tkinter.ttk import *
 import tkinter.messagebox as mb
 import tkinter.filedialog as fd
 import os
+import WA
+import YT
 window = Tk()
 window.update()
 str1 = StringVar()
@@ -16,29 +18,11 @@ def commands():
     
     # For Sending a WA Message
     if str1.get() == 'Send a WA Message':
-        new = Tk()
-        new.geometry('300x300')
-        new.title('Send a WhatsApp Message')
-        
-        
-        new.mainloop()
+        WA.main()
 
     # For playing content on YouTube
     if str1.get() == 'Play on YouTube':
-        new =Tk()
-        key =StringVar()
-        Label(new, text='Enter keyword: ').place(y=1, anchor='nw')
-
-        keyword = Text(new, width=40, height=1, font=('Segoe UI', 11))
-        keyword.place(x=80, anchor='nw')
-        keyword.focus()
-        
-        def player():
-            main = keyword.get('1.0','end')
-            kit.playonyt(main)
-            Label(new, text='Opening on YouTube').place(x = 80, y=30)
-        Button(new, text="Go!",command=player).place(y=30)
-        new.mainloop()    
+        YT.main()
     
     # For a Web Search
     elif str1.get() == 'Search on Web':
