@@ -1,23 +1,19 @@
 from tkinter import *
 from tkinter.ttk import *
-import pywhatkit as kit
-from tkinter import *
-from tkinter.ttk import *
-import tkinter.messagebox as mb
-import tkinter.filedialog as fd
-import os
+import WikiSearch 
+import FileOpen
 import WA
 import YT
 import WebSearch
 import WebLink
 import SysDown
 import Email
+
 window = Tk()
 window.title('Task Performer')
 window.geometry('300x200')
 str1 = StringVar()
 
-storer = ''
 
 def commands():
     
@@ -35,43 +31,11 @@ def commands():
 
     # Search on Wikipedia
     elif str1.get() == 'Search on Wikipedia':
-        source = Tk()
-        source.title('WikiSearch')
-        source.geometry('270x75')
-
-        def infosearch(event='<Return>'):
-            try:
-                n = str(kit.info(wikiSearch.get('1.0','end')))
-                mb.showinfo(title='About '+wikiSearch.get('1.0', 'end'), message=n)
-                wikiSearch.delete('1.0','end')
-            except Exception as e:
-                mb.showerror('Not Found!', message=e)
-                wikiSearch.delete('1.0','end')
-
-
-        Label(source, text='Enter search word: ').place(x=0, y=0)
-        wikiSearch = Text(source, width=20, height=1)
-        wikiSearch.place(x=0,y=20)
-        wikiSearch.focus()
-        wikiSearch.bind('<Return>', infosearch)
-        Button(source, text='Search!', command=infosearch).place(x=175, y=19)
-        source.mainloop()
+        WikiSearch.main()
 
     # Open Files on this Computer
     elif str1.get() == 'Open files on this computer':
-        Open = Tk()
-        Open.geometry('200x200')
-        # def main():
-        fileTypes = (
-        ('All Files', '*.*'),
-        )
-
-        filename = fd.askopenfilenames(title= 'Open a File', initialdir = '/', filetypes=fileTypes)
-        for items in filename:
-            os.startfile(items)
-
-        Open.destroy()
-        Open.mainloop()
+        FileOpen.main()
     
     # Shut down the System
     elif str1.get() == 'Shut Down the system':
