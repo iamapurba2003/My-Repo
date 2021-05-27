@@ -8,8 +8,13 @@ import tkinter.filedialog as fd
 import os
 import WA
 import YT
+import WebSearch
+import WebLink
+import SysDown
+import Email
 window = Tk()
-window.update()
+window.title('Task Performer')
+window.geometry('300x200')
 str1 = StringVar()
 
 storer = ''
@@ -26,37 +31,30 @@ def commands():
     
     # For a Web Search
     elif str1.get() == 'Search on Web':
-        new = Tk()
-        Label(new, text='Enter searchword: ').place(y=1, anchor='nw')
-        keyword = Text(new, width=40, height=1, font=('Segoe UI', 11))
-        keyword.place(x=80, anchor='nw')
-        keyword.focus()
-        
-        def opener():
-            main = keyword.get('1.0','end')
-            kit.search(main)
-            Label(new, text='Searching on Web').place(x = 80, y=30)
-        
-        Button(new, text="Go!",command=opener).place(y=30)
-        new.mainloop()
+        WebSearch.mainFunc()
 
     # Search on Wikipedia
     elif str1.get() == 'Search on Wikipedia':
         source = Tk()
+        source.title('WikiSearch')
+        source.geometry('270x75')
+
+        def infosearch(event='<Return>'):
+            try:
+                n = str(kit.info(wikiSearch.get('1.0','end')))
+                mb.showinfo(title='About '+wikiSearch.get('1.0', 'end'), message=n)
+                wikiSearch.delete('1.0','end')
+            except Exception as e:
+                mb.showerror('Not Found!', message=e)
+                wikiSearch.delete('1.0','end')
+
+
         Label(source, text='Enter search word: ').place(x=0, y=0)
         wikiSearch = Text(source, width=20, height=1)
         wikiSearch.place(x=0,y=20)
         wikiSearch.focus()
-        def infosearch():
-            try:
-                n = str(kit.info(wikiSearch.get('1.0','end')))
-                mb.showinfo(title='About '+wikiSearch.get('1.0', 'end'), message=n)
-            except Exception as e:
-                mb.showerror('Not Found!', message=e)
-
-        Button(source, text='Search!', command=infosearch).place(x=20, y=70)
-
-
+        wikiSearch.bind('<Return>', infosearch)
+        Button(source, text='Search!', command=infosearch).place(x=175, y=19)
         source.mainloop()
 
     # Open Files on this Computer
@@ -66,8 +64,6 @@ def commands():
         # def main():
         fileTypes = (
         ('All Files', '*.*'),
-        ('Text Files', '*.txt'),
-        ('Python Files', '*.py')
         )
 
         filename = fd.askopenfilenames(title= 'Open a File', initialdir = '/', filetypes=fileTypes)
@@ -79,15 +75,15 @@ def commands():
     
     # Shut down the System
     elif str1.get() == 'Shut Down the system':
-        print('hi4')
+        SysDown.mainExecution()
     
     # Open a web link
     elif str1.get() == 'Open any web link':
-        print('hi5')
+        WebLink.main()
     
     # Send an Email
     elif str1.get() == 'Send an Email':
-        print('hi6')
+        Email.main()
 
     elif str1.get() == '<Select>':
         pass

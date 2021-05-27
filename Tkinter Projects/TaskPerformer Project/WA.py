@@ -25,6 +25,7 @@ def main():
 
     message = Text(new, width=25, height=6)
     message.place(x=0,y=90)
+    
 
     Label(new, text='HH:MM').place(x=0,y=200)
     Label(new, text=':').place(x=92,y=200)
@@ -41,11 +42,14 @@ def main():
     delay.place(x=60, y=230)
 
     def send():
+        store = str(message.get('1.0', 'end'))
         try:
+            
             if minTime.get() <10:
                 if mb.showinfo('Send WA Message', f"Message will be sent at {hourTime.get()}:0{minTime.get()}"):
                     mb.showinfo('Send WA Message','Feel free to keep using your PC!')
-                    kit.sendwhatmsg(phoneNumber.get(), message.get('1.0', 'end'), hourTime.get(), minTime.get(), delayTime.get())
+                    store = (message.get('1.0','end'))
+                    kit.sendwhatmsg(phoneNumber.get(), store, hourTime.get(), minTime.get(), delayTime.get())
                     mb.showinfo('Send WA Message', 'Message sent successfully!')
                 
             else:
@@ -60,3 +64,4 @@ def main():
 
     Button(new, text='Send!', command=send).place(x=220, y= 125)
     new.mainloop()
+    
