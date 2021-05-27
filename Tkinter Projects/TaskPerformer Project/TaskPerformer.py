@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
 import WikiSearch 
+import WA 
 import FileOpen
 import YT
 import WebSearch
@@ -18,9 +19,6 @@ str1 = StringVar()
 
 def commands():
     
-    # For Sending a WA Message
-    if str1.get() == 'Send a WA Message':
-        import WA
         # new = Tk()
         # new.geometry('300x300')
         # new.title('Send WA Message')
@@ -100,7 +98,9 @@ def commands():
 
 
 
-
+    # For Sending a WA Message
+    if str1.get() == 'Send a WA Message':
+        WA.main()
 
     # For playing content on YouTube
     if str1.get() == 'Play on YouTube':
