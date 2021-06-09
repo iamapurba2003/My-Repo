@@ -1,52 +1,85 @@
 from tkinter import *
 from tkinter.ttk import *
 import datetime as dt
+from tkinter import filedialog as fd
 
-
-# Main window for filename entry
-window = Tk()
-window.title("FileName")
-window.iconbitmap("P:/Git Folder/Tkinter Projects/NotePad+.ico")
-text = StringVar()
-
-newLabel = Label(window, text="Enter file name(with extension): ")
-newLabel.grid(row=0, column=0)
-
-newLabelText = Entry(window, width=20, textvariable=text)
-newLabelText.grid(row=0, column=1)
-newLabelText.focus()
-
-okButton = Button(window, text="Ok", command=window.destroy)
-okButton.grid()
-
-window.mainloop()
-
-fileName = text.get()
 
 # A new window with text field and other attributes
-window1 = Tk()
-window1.title(f"{fileName} -- NotePad+")
-window1.iconbitmap("P:/Git Folder/Tkinter Projects/NotePad+.ico")
+base = Tk()
 
-textField = Text(window1, height=44, width=168)
-textField.grid(row=1, column=0)
+base.geometry('500x300')
+base.minsize(200,200)
+base.iconbitmap("C:/Users/Himangshu De/Documents/Media and Others/Git Folder/Tkinter Projects/NotePad+.ico")
+
+fileName = 'Untitled'
+
+base.title(f"{fileName} - NotePad+")
+textField = Text(base, height=10, width=13)
+textField.pack(side='left', fill=BOTH, expand=True)
 
 
-def save(event):
+def saveasFile(event='<Return>'):
     dateandtime = dt.datetime.now()
-    window1.title(f"{fileName} -- NotePad+ -- Saved @ {dateandtime.strftime('%H:%M:%S')}")
-    file = open(fileName, "w")
-    file.write(textField.get("1.0", "end"))
-    file.close()
+    global fileName
+    file = fd.asksaveasfile(initialfile=fileName, defaultextension="*.txt",filetypes=[("All Files","*.*"),("Text Documents","*.txt"), ('Python File',"*.py")], confirmoverwrite = True
+    )
+    with open(file.name, 'a') as f:
+        f.write(textField.get('1.0', 'end'))
+        f.close()
+    
+    fileName = file.name
+    base.title(f"{file.name} -- NotePad+ -- Saved @ {dateandtime.strftime('%H:%M:%S')}")
 
 
-saveButton = Button(window1, text="Save")
-saveButton.bind("<Enter>", save)
-saveButton.grid(row=0, column=0)
+def saveFile():
+    dateandtime = dt.datetime.now()
+    global fileName
+    if fileName == 'Untitled':
+        file = fd.asksaveasfile(initialfile = fileName, defaultextension='*.txt', filetypes=[("All Files", "*.*"), ("Text File","*.*"), ('Python Source File','*.py'), ('JavaScript Source File', '*.js'), ('TypeScript Source File', '*.ts'), ('C Source File', '*.c'), ('C++ Source File', '*.cpp'), ('HTML Document', '*.html'), ('Java Source File', '*.java'), ('CascadingStyleSheet Source File', '*.css'), ('Windows Batch File', '*.bat'), ('Windows PowerShell Profile', '*.ps1')])
+        
+        f = open(file.name, 'w')
+        f.write(textField.get('1.0', END))
+        f.close()
+        fileName = file.name
+        base.title(f"{file.name} -- NotePad+ -- Saved @ {dateandtime.strftime('%H:%M:%S')}")
+    
+    else:
+        f = open(fileName, 'w')
+        f.write(textField.get('1.0', END))
+        f.close()
+        base.title(f"{fileName} -- NotePad+ -- Saved @ {dateandtime.strftime('%H:%M:%S')}")
 
-scrollBar = Scrollbar(window1, orient="vertical", command=textField.yview)
-scrollBar.grid(row=1, column=1,sticky="ns")
+
+def openFile():
+    global fileName
+    fileOpen = fd.askopenfile()
+    mainFile = open(fileOpen.name,'r')
+    fileRead = mainFile.read()
+    textField.insert(INSERT, f'{fileRead}')
+    fileName = fileOpen.name
+    base.title(f'Opened: \'{fileName}\' -- NotePad+')
+
+
+menubar = Menu(base)
+fileMenu = Menu(menubar, tearoff=0)
+HelpMenu = Menu(menubar, tearoff=0)
+
+fileMenu.add_command(label='Save', command=saveFile)
+fileMenu.add_command(label='Save As', command=saveasFile)
+fileMenu.add_command(label='Open', command=openFile)
+fileMenu.add_separator()
+fileMenu.add_command(label='Exit', command=base.quit)
+
+HelpMenu.add_command(label='Help')
+
+menubar.add_cascade(label='File', menu=fileMenu)
+menubar.add_cascade(label='Help', menu=HelpMenu)
+
+
+scrollBar = Scrollbar(base, orient="vertical", command=textField.yview)
+scrollBar.pack(side='right', fill=Y)
 textField["yscrollcommand"] = scrollBar.set
 
+base.config(menu=menubar)
 
-window1.mainloop()
+base.mainloop()
