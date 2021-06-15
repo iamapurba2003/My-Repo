@@ -2,6 +2,7 @@
 from tkinter import *
 from tkinter.ttk import *
 import mysql.connector as mc
+import SignUp as sn
 
 #Initialising the connection with the database
 dbLogin = mc.connect(host = 'localhost', user="root", passwd="root", database="testimonials")
@@ -43,6 +44,7 @@ def credentials():
     if user not in usernames:
         newLabel2 = Label(root, text="Username not found", foreground='red')
         newLabel2.grid(row=0, column=2)
+        sn.main()
 
     if user in usernames and passwd == userVal:
         newLabel3 = Label(root, foreground='white', text='Password incorrect')
@@ -71,7 +73,7 @@ passwordboxLabel = Entry(root, textvariable=password, width=15)
 passwordboxLabel.grid(row=1, column=1)
 
 #setting up buttons for credentials checking & execution and for exiting the program
-loginButton = Button(root, text="Login", command=credentials)
+loginButton = Button(root, text="Login/SignUp", command=credentials)
 loginButton.grid(row=3, column=1)
 
 quitButton = Button(root, text='Quit', command=root.destroy)
