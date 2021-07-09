@@ -10,7 +10,7 @@ base = Tk()
 # Tkinter window configurations
 base.geometry('500x300')
 base.minsize(200,200)
-base.iconbitmap("C:/Users/Himangshu De/Documents/Media and Others/Git Folder/Tkinter Projects/NotePad+.ico")
+base.iconbitmap("D:/Documents/Git Folder/Tkinter Projects/NotePad+.ico")
 fileName = 'Untitled'
 base.title(f"{fileName} - NotePad+")
 
@@ -58,8 +58,8 @@ def openFile(event='<Control-o>'):
     mainFile = open(fileOpen.name,'r')
     fileRead = mainFile.read()
     textField.insert(INSERT, f'{fileRead}')
-    fileName = fileOpen.name
-    base.title(f'Opened: \'{fileName}\' -- NotePad+')
+    fileName = fileOpen.name.split('/')
+    base.title(f'Opened: \'{fileName[-1]}\' -- NotePad+')
 
 
 def about(event=None):
