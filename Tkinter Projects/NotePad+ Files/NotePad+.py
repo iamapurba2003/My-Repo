@@ -5,7 +5,6 @@ from tkinter import messagebox as mb
 import tkinter.font 
 from tkinter.scrolledtext import ScrolledText
 import webbrowser
-import Font_NotePad as fnp
 
 # A new window with text field and other attributes
 base = Tk()
