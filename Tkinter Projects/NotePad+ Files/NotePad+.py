@@ -14,7 +14,7 @@ Size = 0
 # Tkinter window configurations
 base.geometry('500x300')
 base.minsize(200,200)
-# base.iconbitmap("D:/Documents/Git Folder/Tkinter Projects/NotePad+.ico")
+base.iconbitmap("D:/Documents/Git Folder/Tkinter Projects/NotePad+.ico")
 fileName = 'Untitled'
 base.title(f"{fileName} - NotePad+")
 
