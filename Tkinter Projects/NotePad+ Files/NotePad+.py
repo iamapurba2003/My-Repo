@@ -13,7 +13,8 @@ Size = 0
 # Tkinter window configurations
 base.geometry('500x300')
 base.minsize(200,200)
-base.iconbitmap("D:/Documents/Git Folder/Tkinter Projects/NotePad+.ico")
+mainImage = PhotoImage(file="/home/himangshuishere/Documents/GitHub/My-Repo/Tkinter Projects/NotePad+ Files/NotePad+ png images/NotePad0.png")
+base.tk.call('wm', 'iconphoto', base._w, mainImage)
 fileName = 'Untitled'
 base.title(f"{fileName} - NotePad+")
 
@@ -24,6 +25,7 @@ status = 0
 textField = ScrolledText(base, height=1, width=2,font=('Arial',16))
 textField.pack(anchor=N, fill=BOTH, expand=True)
 textField.config(wrap='none')
+textField.focus()
 
 #ScrollBars
 scrollBar = Scrollbar(base, orient="horizontal", command=textField.xview)
@@ -86,8 +88,8 @@ def about(event=None):
     def callback():
         webbrowser.open_new("https://github.com/Himangshu-De/My-Repo/tree/master/Tkinter%20Projects")
 
-    
-    if mb.askyesno('About','NotePad+ is an Open Source Program by Himangshu De, its development files are on GitHub\nDo you want to visit?') == True:
+    okcancel = mb.askyesno('About','NotePad+ is an Open Source Program by Himangshu De, its development files are on GitHub\nDo you want to visit?')
+    if okcancel == True:
         callback()
     
 
@@ -96,19 +98,20 @@ def dark():
     _status = status
     if _status == 1:
         textField.config(bg='white', fg='black', insertbackground='black')
+        menubar.config(bg="orange", fg="black")
         status=0
 
     if _status == 0:
         textField.config(bg='black', fg='yellow', insertbackground='yellow')
+        menubar.config(bg="grey", fg="yellow")
         status = 1
         
 
 def font():
     app = Toplevel()
-    app.geometry("410x340")
+    # app.geometry("410x340")
     app.resizable(False, False)
-    # app.attributes("-toolwindow", True)
-    app.attributes("-toolwindow", True)
+    app.attributes("-topmost", 1)
     Value =12
     Name = "Arial"
     # _theme = theme
@@ -214,22 +217,34 @@ def font():
     LabelText = Label(SampleFrame, text="Sample Text", font=("Arial", 12))
     LabelText.pack()
     okButton = Button(app, text="OK", command=save)
-    okButton.pack(anchor=CENTER)
+    okButton.pack(anchor=S, side=BOTTOM)
     Mode()
     
     app.mainloop()
 
 
 def onClose(event="none"):
-    message = mb.askyesnocancel("Exit", "Do you want to save this file and QUIT?")
-
-    if message==True:
-        saveasFile()
+    if textField.get(1.0, END) != "\n":
+        message = mb.askyesnocancel("Exit", "Do you want to save this file and QUIT?")
+        if message==True:
+            saveasFile()
+            base.destroy()
+        if message==False:
+            base.destroy()
+    else:
         base.destroy()
-    if message==False:
-        base.destroy()
 
 
+def lengthWord():
+    texts = textField.get(1.0,END)
+    listMain = texts.split()
+    mainLength = len(listMain[-1])
+    return str(mainLength+1)
+
+def lastwrdDel(event="None"):
+    c = lengthWord()
+    del1 = "end-"+c+"c"
+    textField.delete(del1,END)
 
 
 # Menu widget attributes
@@ -264,7 +279,7 @@ base.bind('<Control-o>',openFile)
 base.bind('<Control-q>',onClose)
 base.bind('<Control-T>', dark)
 # base.bind('<Key>', auto)
-
+textField.bind('<Control-BackSpace>', lastwrdDel)
 base.protocol("WM_DELETE_WINDOW", onClose)
 # Running the main tkinter window
 base.mainloop()
