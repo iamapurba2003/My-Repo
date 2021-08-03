@@ -13,7 +13,7 @@ Size = 0
 # Tkinter window configurations
 base.geometry('500x300')
 base.minsize(200,200)
-mainImage = PhotoImage(file="/home/himangshuishere/Documents/GitHub/My-Repo/Tkinter Projects/NotePad+ Files/NotePad+ png images/NotePad0.png")
+mainImage = PhotoImage(file="~/Documents/GitHub/My-Repo/Tkinter Projects/NotePad+ Files/NotePad+ png images/NotePad0.png")
 base.tk.call('wm', 'iconphoto', base._w, mainImage)
 fileName = 'Untitled'
 base.title(f"{fileName} - NotePad+")
