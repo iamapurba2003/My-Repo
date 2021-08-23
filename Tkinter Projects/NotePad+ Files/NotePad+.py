@@ -15,7 +15,7 @@ Size = 0
 base.geometry('500x300')
 base.minsize(200,200)
 if platform.system() == "Linux":
-    mainImage = PhotoImage(file="~/Documents/GitHub/My-Repo/Tkinter Projects/NotePad+ Files/NotePad+ png images/NotePad0.png")
+    mainImage = PhotoImage(file="./NotePad+ png images/NotePad0.png")
     base.tk.call('wm', 'iconphoto', base._w, mainImage)
 
 if platform.system() == "Windows":
