@@ -19,7 +19,7 @@ if platform.system() == "Linux":
     base.tk.call('wm', 'iconphoto', base._w, mainImage)
 
 if platform.system() == "Windows":
-    base.iconbitmap("./NotePad+ png images/NotePad0.png")
+    base.iconbitmap("./NotePad+.ico")
 fileName = 'Untitled'
 base.title(f"{fileName} - NotePad+")
 
