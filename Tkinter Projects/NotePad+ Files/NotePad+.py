@@ -5,6 +5,7 @@ from tkinter import messagebox as mb
 import tkinter.font 
 from tkinter.scrolledtext import ScrolledText
 import webbrowser
+import platform
 
 # A new window with text field and other attributes
 base = Tk()
@@ -13,8 +14,12 @@ Size = 0
 # Tkinter window configurations
 base.geometry('500x300')
 base.minsize(200,200)
-mainImage = PhotoImage(file="~/Documents/GitHub/My-Repo/Tkinter Projects/NotePad+ Files/NotePad+ png images/NotePad0.png")
-base.tk.call('wm', 'iconphoto', base._w, mainImage)
+if platform.system() == "Linux":
+    mainImage = PhotoImage(file="~/Documents/GitHub/My-Repo/Tkinter Projects/NotePad+ Files/NotePad+ png images/NotePad0.png")
+    base.tk.call('wm', 'iconphoto', base._w, mainImage)
+
+if platform.system() == "Windows":
+    base.iconbitmap("./NotePad+ png images/NotePad0.png")
 fileName = 'Untitled'
 base.title(f"{fileName} - NotePad+")
 
